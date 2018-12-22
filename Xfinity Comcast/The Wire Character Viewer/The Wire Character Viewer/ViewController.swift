@@ -11,10 +11,13 @@ import BaseApp
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var openWireCharacterApp: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpData()
+        openWireCharacterApp.addTarget(self, action: #selector(openApp), for: .touchUpInside)
         
     }
     
@@ -26,7 +29,11 @@ class ViewController: UIViewController {
                 self.showErrorAlert(error: error, alertActions: nil)
             }
         }
-        
+    }
+    
+    @objc func openApp() {
+        print(Bundle.allBundles)
+//        let sb = UIStoryboard.init(name: "CharcterData", bundle: Bundle.)
     }
 
 
