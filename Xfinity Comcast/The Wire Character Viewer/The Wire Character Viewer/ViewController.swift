@@ -25,8 +25,6 @@ class ViewController: UIViewController {
             if let error = error {
                 self.showErrorAlert(error: error, alertActions: nil)
             }
-            
-            print(model!)
         }
         
     }
