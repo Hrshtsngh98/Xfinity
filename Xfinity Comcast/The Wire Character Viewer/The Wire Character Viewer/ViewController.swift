@@ -20,11 +20,13 @@ class ViewController: UIViewController {
     
     func setUpData() {
         
-        let simpsonData = SimpsonFactory()
-        simpsonData.getData { (model, error) in
+        let wireCharacterFactory = WireCharacterFactory()
+        wireCharacterFactory.getData { (model, error) in
             if let error = error {
                 self.showErrorAlert(error: error, alertActions: nil)
             }
+            
+            print(model!)
         }
         
     }
