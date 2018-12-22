@@ -8,9 +8,9 @@
 
 import Foundation
 
-class SimpsonFactory: CharacterFactory {
+public class SimpsonFactory: CharacterFactory {
     
-    init() {
+    public init() {
         super.init(appType: Constant.AppType.SimpsonsCharacterViewer)
     }
     

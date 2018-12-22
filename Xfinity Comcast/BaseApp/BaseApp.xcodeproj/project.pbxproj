@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE91868121CEA63C00929C38 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91868021CEA63C00929C38 /* UIViewController+Alert.swift */; };
 		EED9F0CF21CDE91F00D0D912 /* BaseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EED9F0C521CDE91E00D0D912 /* BaseApp.framework */; };
 		EED9F0D421CDE91F00D0D912 /* BaseAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED9F0D321CDE91F00D0D912 /* BaseAppTests.swift */; };
 		EED9F0D621CDE91F00D0D912 /* BaseApp.h in Headers */ = {isa = PBXBuildFile; fileRef = EED9F0C821CDE91E00D0D912 /* BaseApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE91868021CEA63C00929C38 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		EED9F0C521CDE91E00D0D912 /* BaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED9F0C821CDE91E00D0D912 /* BaseApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseApp.h; sourceTree = "<group>"; };
 		EED9F0C921CDE91E00D0D912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +68,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE91867E21CEA5F700929C38 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EED9F10321CE036B00D0D912 /* AppTypeFactory */,
+				EED9F0DF21CDEACA00D0D912 /* Constants.swift */,
+				EED9F0E121CDEBAF00D0D912 /* CharacterRequestManager.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		EE91867F21CEA62400929C38 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EE91868021CEA63C00929C38 /* UIViewController+Alert.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		EED9F0BB21CDE91E00D0D912 = {
 			isa = PBXGroup;
 			children = (
@@ -87,12 +107,11 @@
 		EED9F0C721CDE91E00D0D912 /* BaseApp */ = {
 			isa = PBXGroup;
 			children = (
+				EE91867F21CEA62400929C38 /* Common */,
+				EE91867E21CEA5F700929C38 /* Application */,
+				EED9F0E321CDEBB600D0D912 /* Model */,
 				EED9F0C821CDE91E00D0D912 /* BaseApp.h */,
 				EED9F0C921CDE91E00D0D912 /* Info.plist */,
-				EED9F0DF21CDEACA00D0D912 /* Constants.swift */,
-				EED9F0E121CDEBAF00D0D912 /* CharacterRequestManager.swift */,
-				EED9F10321CE036B00D0D912 /* AppTypeFactory */,
-				EED9F0E321CDEBB600D0D912 /* Model */,
 			);
 			path = BaseApp;
 			sourceTree = "<group>";
@@ -235,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE91868121CEA63C00929C38 /* UIViewController+Alert.swift in Sources */,
 				EED9F0FA21CDF0E300D0D912 /* RelatedTopics.swift in Sources */,
 				EED9F10221CDF34C00D0D912 /* WireCharacterFactory.swift in Sources */,
 				EED9F10021CDF33700D0D912 /* SimpsonFactory.swift in Sources */,

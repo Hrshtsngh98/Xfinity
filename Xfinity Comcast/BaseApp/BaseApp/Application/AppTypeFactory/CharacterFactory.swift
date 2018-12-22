@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CharacterFactory {
+public class CharacterFactory {
     
     private var appType: Constant.AppType
     private var url: String {
@@ -22,11 +22,11 @@ class CharacterFactory {
         }
     }
     
-    init(appType: Constant.AppType) {
+    public init(appType: Constant.AppType) {
         self.appType = appType
     }
     
-    func getData(completion: @escaping completionForCharacterModel) {
+    public func getData(completion: @escaping completionForCharacterModel) {
         
         CharacterRequestManager.requestCharacter(urlString: url) { (data, error) in
             if error == nil {

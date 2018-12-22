@@ -13,8 +13,26 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUpData()
+        
+    }
+    
+    func setUpData() {
+        
+        var simpsonData = SimpsonFactory.init()
+        
+        simpsonData.getData { (model, error) in
+            if error == nil {
+                print(model)
+                
+            } else {
+                showErrorAlert(controller: self, error: error, alertActions: nil)
+            }
+        }
     }
 
 
 }
+
 

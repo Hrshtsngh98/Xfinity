@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CharacterModel : Codable {
+public struct CharacterModel : Codable {
     
 	let relatedTopics : [RelatedTopics]?
 
@@ -16,7 +16,7 @@ struct CharacterModel : Codable {
 		case relatedTopics = "RelatedTopics"
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         
 		let values = try decoder.container(keyedBy: CodingKeys.self)
         relatedTopics = try values.decodeIfPresent([RelatedTopics].self, forKey: .relatedTopics)

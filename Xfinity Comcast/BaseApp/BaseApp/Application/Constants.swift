@@ -8,10 +8,10 @@
 
 import Foundation
 
-typealias completionHandler = (Data?, Error?) -> ()
-typealias completionForCharacterModel = (CharacterModel?, Error?) -> ()
+public typealias completionHandler = (Data?, Error?) -> ()
+public typealias completionForCharacterModel = (CharacterModel?, Error?) -> ()
 
-class Constant {
+public class Constant {
     
     public enum AppType {
         case TheWireCharacterViewer

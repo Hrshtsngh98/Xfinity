@@ -8,9 +8,9 @@
 
 import Foundation
 
-class WireCharacterFactory: CharacterFactory {
+public class WireCharacterFactory: CharacterFactory {
     
-    init() {
+    public init() {
         super.init(appType: Constant.AppType.TheWireCharacterViewer)
     }
 
