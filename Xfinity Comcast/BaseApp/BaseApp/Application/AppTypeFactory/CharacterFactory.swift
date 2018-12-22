@@ -30,12 +30,12 @@ public class CharacterFactory {
         
         CharacterRequestManager.requestCharacter(urlString: url) { (data, error) in
             if error == nil {
+                guard let data = data else {
+                    return
+                }
                 do {
-                    guard let data = data, let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as? Data else {
-                        return
-                    }
                     let decoder = JSONDecoder()
-                    let characterModel = try decoder.decode(CharacterModel.self, from: jsonData)
+                    let characterModel = try decoder.decode(CharacterModel.self, from: data)
                     completion(characterModel, nil)
                 } catch {
                     completion(nil, error)

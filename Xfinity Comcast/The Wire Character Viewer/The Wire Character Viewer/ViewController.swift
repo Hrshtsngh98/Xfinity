@@ -20,16 +20,13 @@ class ViewController: UIViewController {
     
     func setUpData() {
         
-        var simpsonData = SimpsonFactory.init()
-        
+        let simpsonData = SimpsonFactory()
         simpsonData.getData { (model, error) in
-            if error == nil {
-                print(model)
-                
-            } else {
-                showErrorAlert(controller: self, error: error, alertActions: nil)
+            if let error = error {
+                self.showErrorAlert(error: error, alertActions: nil)
             }
         }
+        
     }
 
 

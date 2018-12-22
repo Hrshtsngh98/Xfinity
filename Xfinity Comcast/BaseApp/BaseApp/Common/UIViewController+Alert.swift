@@ -10,7 +10,7 @@ import Foundation
 
 extension UIViewController {
     
-    public func showErrorAlert(controller: UIViewController, error: Error, alertActions: [UIAlertAction]?) {
+    public func showErrorAlert(error: Error, alertActions: [UIAlertAction]?) {
         let alterController = UIAlertController.init(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         alterController.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
         
@@ -20,7 +20,7 @@ extension UIViewController {
             }
         }
         
-        controller.present(alterController, animated: true, completion: nil)
+        present(alterController, animated: true, completion: nil)
     }
     
 }
