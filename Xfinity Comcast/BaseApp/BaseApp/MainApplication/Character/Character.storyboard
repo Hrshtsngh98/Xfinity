@@ -35,9 +35,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
-                                        <connections>
-                                            <segue destination="0Lg-RC-sr4" kind="showDetail" identifier="showDetail" id="gtk-BX-Ds2"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -79,28 +76,21 @@
             </objects>
             <point key="canvasLocation" x="306" y="-340"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="2MI-lh-1sx">
+        <!--CharacterDetail-->
+        <scene sceneID="cwg-mI-Ldt">
             <objects>
-                <viewController id="0Lg-RC-sr4" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8VN-Oo-XtL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="w4S-6Q-0eS"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mxJ-A3-Pb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="CharacterDetail" id="0MR-iu-FKe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EyJ-IK-Ahv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-455" y="421"/>
+            <point key="canvasLocation" x="-548" y="255"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="XNF-p1-jhm">
             <objects>
                 <splitViewController storyboardIdentifier="UISplitViewController" id="THO-jH-4dS" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="0Lg-RC-sr4" kind="relationship" relationship="detailViewController" id="QjC-Yw-pdi"/>
                         <segue destination="ktN-HH-sy9" kind="relationship" relationship="masterViewController" id="dwj-9S-xgX"/>
+                        <segue destination="0MR-iu-FKe" kind="relationship" relationship="detailViewController" id="xLY-7x-ibX"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3d-HW-aGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -126,7 +116,4 @@
             <point key="canvasLocation" x="-588" y="-340"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="QjC-Yw-pdi"/>
-    </inferredMetricsTieBreakers>
 </document>
