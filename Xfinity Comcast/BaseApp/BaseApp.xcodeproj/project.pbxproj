@@ -17,6 +17,7 @@
 		EECA305221CF0EA500F25F0C /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECA305121CF0EA500F25F0C /* CharacterListViewController.swift */; };
 		EECA305421CF0FCD00F25F0C /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECA305321CF0FCD00F25F0C /* ApplicationManager.swift */; };
 		EECA305621CF19D800F25F0C /* BaseAppBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECA305521CF19D800F25F0C /* BaseAppBundleHelper.swift */; };
+		EECA305821CF67AE00F25F0C /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EECA305721CF67AE00F25F0C /* SDWebImage.framework */; };
 		EED9F0CF21CDE91F00D0D912 /* BaseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EED9F0C521CDE91E00D0D912 /* BaseApp.framework */; };
 		EED9F0D421CDE91F00D0D912 /* BaseAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED9F0D321CDE91F00D0D912 /* BaseAppTests.swift */; };
 		EED9F0D621CDE91F00D0D912 /* BaseApp.h in Headers */ = {isa = PBXBuildFile; fileRef = EED9F0C821CDE91E00D0D912 /* BaseApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -51,6 +52,7 @@
 		EECA305121CF0EA500F25F0C /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		EECA305321CF0FCD00F25F0C /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		EECA305521CF19D800F25F0C /* BaseAppBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAppBundleHelper.swift; sourceTree = "<group>"; };
+		EECA305721CF67AE00F25F0C /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		EED9F0C521CDE91E00D0D912 /* BaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED9F0C821CDE91E00D0D912 /* BaseApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseApp.h; sourceTree = "<group>"; };
 		EED9F0C921CDE91E00D0D912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECA305821CF67AE00F25F0C /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +138,7 @@
 				EED9F0C721CDE91E00D0D912 /* BaseApp */,
 				EED9F0D221CDE91F00D0D912 /* BaseAppTests */,
 				EED9F0C621CDE91E00D0D912 /* Products */,
+				EECA305721CF67AE00F25F0C /* SDWebImage.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +214,7 @@
 				EED9F0C121CDE91E00D0D912 /* Sources */,
 				EED9F0C221CDE91E00D0D912 /* Frameworks */,
 				EED9F0C321CDE91E00D0D912 /* Resources */,
+				EECA305921CF67CB00F25F0C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -295,6 +300,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EECA305921CF67CB00F25F0C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EED9F0C121CDE91E00D0D912 /* Sources */ = {
@@ -470,6 +497,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BaseApp/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -498,6 +529,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BaseApp/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;

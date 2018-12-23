@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CharacterCollectionViewItemCell: UICollectionViewCell {
+    
+    private let defaultImageName = "default_image"
     
     @IBOutlet weak var characterImageView: UIImageView! {
         didSet {
@@ -20,14 +23,8 @@ class CharacterCollectionViewItemCell: UICollectionViewCell {
     @IBOutlet weak var characterTextLable: UILabel!
     
     func setUp(with data: RelatedTopics) {
-        
-        do {
-            if let urlString = data.firstURL, let url = URL(string: urlString) {
-                let imageData = try Data.init(contentsOf: url)
-                characterImageView.image = UIImage(data: imageData)
-            }
-        } catch {
-            print("Error parsing image")
+        if let urlString = data.icon?.url, let url = URL(string: urlString) {
+            characterImageView.sd_setImage(with: url, placeholderImage: UIImage(named: defaultImageName, in: BaseAppBundleHelper.bundle, compatibleWith: nil))
         }
         
         if let text = data.text {
