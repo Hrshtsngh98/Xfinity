@@ -27,6 +27,8 @@ public class Constant {
     
     public enum Strings {
         static let defaultImageName = "default_image"
+        static let characterDetailString = "Character Detail"
+        static let characterDetailTitleString = "Character Name"
     }
     
 }

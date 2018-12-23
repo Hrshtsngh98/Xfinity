@@ -12,12 +12,17 @@ import SDWebImage
 class CharacterDetailViewController: UIViewController {
     
     @IBOutlet weak var characterImageView: UIImageView!
-    @IBOutlet weak var characterDetailText: UILabel!
+    @IBOutlet weak var characterDetailText: UILabel! {
+        didSet {
+            characterDetailText.text = Constant.Strings.characterDetailString
+        }
+    }
     
     var relatedTopic: RelatedTopics?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = Constant.Strings.characterDetailTitleString
         setUpData()
     }
     
