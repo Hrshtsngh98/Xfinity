@@ -69,6 +69,7 @@ class CharacterListViewController: UIViewController {
         }
         characterListTable.reloadData()
     }
+    
 }
 
 extension CharacterListViewController: UICollectionViewDataSource {
@@ -101,7 +102,7 @@ extension CharacterListViewController: UICollectionViewDelegate {
         let storyboard = UIStoryboard.init(name: "CharacterDetail", bundle: BaseAppBundleHelper.bundle)
         if let controller = storyboard.instantiateViewController(withIdentifier: "CharacterDetailViewController") as? CharacterDetailViewController {
             controller.relatedTopic = relatedTopics[indexPath.row]
-            navigationController?.pushViewController(controller, animated: true)
+            splitViewController?.showDetailViewController(controller, sender: nil)
         }
     }
     

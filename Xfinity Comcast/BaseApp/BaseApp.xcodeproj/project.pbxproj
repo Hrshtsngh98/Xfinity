@@ -111,7 +111,6 @@
 				EE91868421CEB8C000929C38 /* Character */,
 				EECA305A21CF6F7200F25F0C /* CharacterDetail */,
 				EED9F10321CE036B00D0D912 /* AppTypeFactory */,
-				EE91869621CEC86200929C38 /* Assets.xcassets */,
 			);
 			path = MainApplication;
 			sourceTree = "<group>";
@@ -185,6 +184,7 @@
 				EE91867F21CEA62400929C38 /* Helper */,
 				EE91867E21CEA5F700929C38 /* MainApplication */,
 				EED9F0E321CDEBB600D0D912 /* Model Class */,
+				EE91869621CEC86200929C38 /* Assets.xcassets */,
 				EED9F0C821CDE91E00D0D912 /* BaseApp.h */,
 				EED9F0C921CDE91E00D0D912 /* Info.plist */,
 			);
