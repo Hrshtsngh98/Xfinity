@@ -9,7 +9,7 @@
 import UIKit
 
 class CharacterListViewController: UIViewController {
-
+    
     @IBOutlet weak var characterListTable: UICollectionView!
     
     var relatedTopics: [RelatedTopics] = []
@@ -19,7 +19,6 @@ class CharacterListViewController: UIViewController {
     var cellsPerRow = 1
     var enabled = true
     
-    @IBOutlet weak var toggleCharacterView: UIBarButtonItem!
     private let characterCollectionViewRowCell = "CharacterCollectionViewRowCell"
     private let characterCollectionViewItemCell = "CharacterCollectionViewItemCell"
     
@@ -46,7 +45,7 @@ class CharacterListViewController: UIViewController {
             }
         }
     }
-
+    
     @IBAction func toggleLayoutAction() {
         enabled = !enabled
         if enabled {
@@ -64,7 +63,7 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         if enabled {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: characterCollectionViewRowCell, for: indexPath) as? CharacterCollectionViewRowCell else {
                 return UICollectionViewCell()
@@ -84,23 +83,14 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
 
 extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return minimumLineSpacing
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return minimumInteritemSpacing
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let marginsAndInsets = CGFloat(inset * 2) + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
         let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
-        return CGSize(width: itemWidth, height: itemWidth)
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        characterListTable?.collectionViewLayout.invalidateLayout()
-        super.viewWillTransition(to: size, with: coordinator)
+        if enabled {
+            return CGSize(width: itemWidth, height: itemWidth/2)
+        } else {
+            return CGSize(width: itemWidth, height: itemWidth*2)
+        }
     }
     
 }
