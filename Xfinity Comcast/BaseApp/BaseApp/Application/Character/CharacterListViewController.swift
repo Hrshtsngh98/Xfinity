@@ -25,7 +25,15 @@ class CharacterListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNib()
+        setUpCollectionView()
         setUpData()
+
+    }
+    
+    func setUpCollectionView() {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+        characterListTable.collectionViewLayout = layout
     }
     
     func registerNib() {
