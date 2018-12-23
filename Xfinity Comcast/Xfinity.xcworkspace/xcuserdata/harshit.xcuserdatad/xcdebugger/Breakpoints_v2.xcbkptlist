@@ -9,14 +9,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "The Wire Character Viewer/The Wire Character Viewer/ViewController.swift"
-            timestampString = "567202802.641629"
+            filePath = "BaseApp/BaseApp/Application/ApplicationManager.swift"
+            timestampString = "567220650.9536639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "openApp()"
-            landmarkType = "7">
+            startingLineNumber = "23"
+            endingLineNumber = "23">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

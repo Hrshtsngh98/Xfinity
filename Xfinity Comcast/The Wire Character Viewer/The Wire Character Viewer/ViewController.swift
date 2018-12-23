@@ -32,8 +32,9 @@ class ViewController: UIViewController {
     }
     
     @objc func openApp() {
-        print(Bundle.allBundles)
-//        let sb = UIStoryboard.init(name: "CharcterData", bundle: Bundle.)
+        if let viewController = ApplicationManager.initialViewController() {
+            present(viewController, animated: true, completion: nil)
+        }
     }
 
 
