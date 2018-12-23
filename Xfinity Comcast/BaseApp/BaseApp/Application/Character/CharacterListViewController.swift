@@ -18,6 +18,7 @@ class CharacterListViewController: UIViewController {
     let minimumInteritemSpacing: CGFloat = 10
     var cellsPerRow = 1
     var enabled = true
+    var appType: Constant.AppType?
     
     private let characterCollectionViewRowCell = "CharacterCollectionViewRowCell"
     private let characterCollectionViewItemCell = "CharacterCollectionViewItemCell"
@@ -34,8 +35,13 @@ class CharacterListViewController: UIViewController {
     }
     
     func setUpData() {
-        let wireCharacterFactory = SimpsonFactory()
-        wireCharacterFactory.getData { (model, error) in
+        
+        guard let appType = appType else {
+            return
+        }
+        
+        let characterFactory = CharacterListViewModel(appType: appType).charactoryFactory
+        characterFactory.getData { (model, error) in
             if let error = error {
                 self.showErrorAlert(error: error, alertActions: nil)
             }
@@ -44,6 +50,10 @@ class CharacterListViewController: UIViewController {
                 self.characterListTable.reloadData()
             }
         }
+    }
+    
+    @IBAction func closeAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func toggleLayoutAction() {

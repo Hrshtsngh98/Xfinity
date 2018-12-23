@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ro1-9x-cRi">
-                                <rect key="frame" x="8" y="236" width="359" height="423"/>
+                                <rect key="frame" x="8" y="236" width="359" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,7 +36,6 @@
                             <constraint firstItem="4Zd-kg-fYQ" firstAttribute="trailing" secondItem="Huj-rm-ti7" secondAttribute="trailing" id="SmQ-i4-WJb"/>
                             <constraint firstItem="ro1-9x-cRi" firstAttribute="leading" secondItem="4Zd-kg-fYQ" secondAttribute="leading" constant="8" id="T5c-g2-g8b"/>
                             <constraint firstItem="Huj-rm-ti7" firstAttribute="height" secondItem="Vdm-3H-fMn" secondAttribute="height" multiplier="0.3" id="afy-DS-rCM"/>
-                            <constraint firstItem="4Zd-kg-fYQ" firstAttribute="bottom" secondItem="ro1-9x-cRi" secondAttribute="bottom" constant="8" id="d42-IZ-eg5"/>
                             <constraint firstItem="Huj-rm-ti7" firstAttribute="leading" secondItem="4Zd-kg-fYQ" secondAttribute="leading" id="qua-QN-e3v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Zd-kg-fYQ"/>

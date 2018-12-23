@@ -13,7 +13,7 @@
         <!--Character List View Controller-->
         <scene sceneID="Nod-df-LsW">
             <objects>
-                <viewController id="zFV-uj-M2G" customClass="CharacterListViewController" customModule="BaseApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CharacterListViewController" id="zFV-uj-M2G" customClass="CharacterListViewController" customModule="BaseApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fBg-lF-B8j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,6 +44,11 @@
                         <viewLayoutGuide key="safeArea" id="sQy-HM-1gq"/>
                     </view>
                     <navigationItem key="navigationItem" id="wYP-F7-cBs">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="wqL-DR-QrK">
+                            <connections>
+                                <action selector="closeAction:" destination="zFV-uj-M2G" id="g3q-4L-Biu"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Zfe-4r-wpm">
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="gig-RY-7Z6">
                                 <rect key="frame" x="308" y="6.5" width="51" height="31"/>
@@ -65,7 +70,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Ckh-A6-aCI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ktN-HH-sy9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CharacterNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ktN-HH-sy9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wWQ-ip-N9J">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
