@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ktN-HH-sy9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,7 +27,19 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="r5L-NQ-eKz">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="0Lg-RC-sr4" kind="showDetail" identifier="showDetail" id="gtk-BX-Ds2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="zFV-uj-M2G" id="lFW-v5-QRB"/>
                                     <outlet property="delegate" destination="zFV-uj-M2G" id="le4-1m-83l"/>
@@ -65,12 +77,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ay-gv-rZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="991.20000000000005" y="33.733133433283363"/>
+            <point key="canvasLocation" x="306" y="-340"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2MI-lh-1sx">
+            <objects>
+                <viewController id="0Lg-RC-sr4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8VN-Oo-XtL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="w4S-6Q-0eS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mxJ-A3-Pb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-455" y="421"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="XNF-p1-jhm">
+            <objects>
+                <splitViewController storyboardIdentifier="UISplitViewController" id="THO-jH-4dS" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="0Lg-RC-sr4" kind="relationship" relationship="detailViewController" id="QjC-Yw-pdi"/>
+                        <segue destination="ktN-HH-sy9" kind="relationship" relationship="masterViewController" id="dwj-9S-xgX"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z3d-HW-aGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1920" y="72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ckh-A6-aCI">
             <objects>
-                <navigationController storyboardIdentifier="CharacterNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ktN-HH-sy9" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qxs-ew-riU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ktN-HH-sy9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wWQ-ip-N9J">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -81,9 +122,11 @@
                         <segue destination="zFV-uj-M2G" kind="relationship" relationship="rootViewController" id="1kw-ti-eDc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qxs-ew-riU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="33.733133433283363"/>
+            <point key="canvasLocation" x="-588" y="-340"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="QjC-Yw-pdi"/>
+    </inferredMetricsTieBreakers>
 </document>
