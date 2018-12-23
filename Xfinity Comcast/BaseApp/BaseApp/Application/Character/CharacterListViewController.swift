@@ -44,10 +44,11 @@ class CharacterListViewController: UIViewController {
         characterFactory.getData { (model, error) in
             if let error = error {
                 self.showErrorAlert(error: error, alertActions: nil)
-            }
-            self.relatedTopics = model!.relatedTopics!
-            DispatchQueue.main.async {
-                self.characterListTable.reloadData()
+            } else {
+                self.relatedTopics = model!.relatedTopics!
+                DispatchQueue.main.async {
+                    self.characterListTable.reloadData()
+                }
             }
         }
     }
