@@ -105,28 +105,28 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		EE91867E21CEA5F700929C38 /* Application */ = {
+		EE91867E21CEA5F700929C38 /* MainApplication */ = {
 			isa = PBXGroup;
 			children = (
-				EECA305321CF0FCD00F25F0C /* ApplicationManager.swift */,
 				EE91868421CEB8C000929C38 /* Character */,
 				EECA305A21CF6F7200F25F0C /* CharacterDetail */,
 				EED9F10321CE036B00D0D912 /* AppTypeFactory */,
 				EE91869621CEC86200929C38 /* Assets.xcassets */,
 			);
-			path = Application;
+			path = MainApplication;
 			sourceTree = "<group>";
 		};
-		EE91867F21CEA62400929C38 /* Common */ = {
+		EE91867F21CEA62400929C38 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				EECA305321CF0FCD00F25F0C /* ApplicationManager.swift */,
 				EED9F0DF21CDEACA00D0D912 /* Constants.swift */,
 				EED9F0E121CDEBAF00D0D912 /* CharacterRequestManager.swift */,
 				EECA305521CF19D800F25F0C /* BaseAppBundleHelper.swift */,
 				EE91868021CEA63C00929C38 /* UIViewController+Alert.swift */,
 				EECA305F21CF743C00F25F0C /* String+SplitHelper.swift */,
 			);
-			path = Common;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		EE91868421CEB8C000929C38 /* Character */ = {
@@ -182,9 +182,9 @@
 		EED9F0C721CDE91E00D0D912 /* BaseApp */ = {
 			isa = PBXGroup;
 			children = (
-				EE91867F21CEA62400929C38 /* Common */,
-				EE91867E21CEA5F700929C38 /* Application */,
-				EED9F0E321CDEBB600D0D912 /* Model */,
+				EE91867F21CEA62400929C38 /* Helper */,
+				EE91867E21CEA5F700929C38 /* MainApplication */,
+				EED9F0E321CDEBB600D0D912 /* Model Class */,
 				EED9F0C821CDE91E00D0D912 /* BaseApp.h */,
 				EED9F0C921CDE91E00D0D912 /* Info.plist */,
 			);
@@ -200,14 +200,14 @@
 			path = BaseAppTests;
 			sourceTree = "<group>";
 		};
-		EED9F0E321CDEBB600D0D912 /* Model */ = {
+		EED9F0E321CDEBB600D0D912 /* Model Class */ = {
 			isa = PBXGroup;
 			children = (
 				EED9F0F421CDF0E300D0D912 /* Icon.swift */,
 				EED9F0EF21CDF0E200D0D912 /* CharacterModel.swift */,
 				EED9F0F321CDF0E200D0D912 /* RelatedTopics.swift */,
 			);
-			path = Model;
+			path = "Model Class";
 			sourceTree = "<group>";
 		};
 		EED9F10321CE036B00D0D912 /* AppTypeFactory */ = {
