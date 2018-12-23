@@ -57,7 +57,7 @@ class CharacterListViewController: UIViewController {
     }
 }
 
-extension CharacterListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension CharacterListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return relatedTopics.count
     }
@@ -76,6 +76,18 @@ extension CharacterListViewController: UICollectionViewDataSource, UICollectionV
             }
             cell.setUp(with: relatedTopics[indexPath.row])
             return cell
+        }
+    }
+    
+}
+
+extension CharacterListViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "CharacterDetail", bundle: BaseAppBundleHelper.bundle)
+        if let controller = storyboard.instantiateViewController(withIdentifier: "CharacterDetailViewController") as? CharacterDetailViewController {
+            controller.relatedTopic = relatedTopics[indexPath.row]
+            navigationController?.pushViewController(controller, animated: true)
         }
     }
     

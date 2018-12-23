@@ -23,4 +23,8 @@ public class Constant {
         static let theWireCharacterViewer = "http://api.duckduckgo.com/?q=the+wire+characters&format=json"
     }
     
+    public enum Strings {
+        static let defaultImageName = "default_image"
+    }
+    
 }
