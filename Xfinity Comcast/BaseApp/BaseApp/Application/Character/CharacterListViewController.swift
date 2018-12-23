@@ -34,7 +34,7 @@ class CharacterListViewController: UIViewController {
     }
     
     func setUpData() {
-        let wireCharacterFactory = WireCharacterFactory()
+        let wireCharacterFactory = SimpsonFactory()
         wireCharacterFactory.getData { (model, error) in
             if let error = error {
                 self.showErrorAlert(error: error, alertActions: nil)

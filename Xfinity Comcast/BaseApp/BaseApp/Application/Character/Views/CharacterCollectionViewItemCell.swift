@@ -13,9 +13,7 @@ class CharacterCollectionViewItemCell: UICollectionViewCell {
     
     @IBOutlet weak var characterImageView: UIImageView! {
         didSet {
-            characterImageView.layer.cornerRadius = 8
-            characterImageView.layer.borderWidth = 2
-            characterImageView.layer.borderColor = UIColor.black.cgColor
+            characterImageView.contentMode = .scaleAspectFit
         }
     }
     @IBOutlet weak var characterTextLable: UILabel!

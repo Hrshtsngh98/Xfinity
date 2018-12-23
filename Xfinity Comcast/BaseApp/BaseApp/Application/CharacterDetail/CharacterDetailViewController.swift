@@ -11,7 +11,11 @@ import SDWebImage
 
 class CharacterDetailViewController: UIViewController {
     
-    @IBOutlet weak var characterImageView: UIImageView!
+    @IBOutlet weak var characterImageView: UIImageView! {
+        didSet {
+            characterImageView.contentMode = .scaleAspectFit
+        }
+    }
     @IBOutlet weak var characterDetailText: UILabel!
     
     var relatedTopic: RelatedTopics?
