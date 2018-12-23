@@ -27,7 +27,8 @@ class CharacterListViewController: UIViewController {
         registerNib()
         setUpCollectionView()
         setUpData()
-
+        splitViewController?.delegate = self
+        splitViewController?.preferredDisplayMode = .allVisible
     }
     
     func setUpCollectionView() {
@@ -120,4 +121,10 @@ extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
+}
+
+extension CharacterListViewController: UISplitViewControllerDelegate {
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
+    }
 }
