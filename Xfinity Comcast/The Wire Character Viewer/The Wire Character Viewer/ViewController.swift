@@ -15,20 +15,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setUpData()
         openWireCharacterApp.addTarget(self, action: #selector(openApp), for: .touchUpInside)
         
-    }
-    
-    func setUpData() {
-        
-        let wireCharacterFactory = WireCharacterFactory()
-        wireCharacterFactory.getData { (model, error) in
-            if let error = error {
-                self.showErrorAlert(error: error, alertActions: nil)
-            }
-        }
     }
     
     @objc func openApp() {

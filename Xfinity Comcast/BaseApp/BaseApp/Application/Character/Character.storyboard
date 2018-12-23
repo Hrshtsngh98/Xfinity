@@ -48,12 +48,14 @@
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="gig-RY-7Z6">
                                 <rect key="frame" x="308" y="6.5" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleLayoutAction" destination="zFV-uj-M2G" eventType="touchUpInside" id="JWe-Xg-z6x"/>
+                                </connections>
                             </switch>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="characterListTable" destination="PpE-3d-OfF" id="weG-G2-FSi"/>
-                        <outlet property="toggleListSwitch" destination="Zfe-4r-wpm" id="awz-hy-GpK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ay-gv-rZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
