@@ -11,11 +11,7 @@ import Foundation
 extension String {
     
     public func splitByHypen() -> [String] {
-        
-//        guard let strArray = split(separator: "-") as! [String] else {
-//            return []
-//        }
-        return self.components(separatedBy: "-")
+        return self.components(separatedBy: " - ")
     }
     
 }

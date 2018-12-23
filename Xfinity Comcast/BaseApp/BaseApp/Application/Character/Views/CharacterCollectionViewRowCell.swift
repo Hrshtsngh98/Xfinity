@@ -10,12 +10,20 @@ import UIKit
 
 class CharacterCollectionViewRowCell: UICollectionViewCell {
     
-    @IBOutlet weak var characterTextLabel: UILabel!
+    @IBOutlet weak var characterDetailLabel: UILabel!
+    @IBOutlet weak var characterTitleLabel: UILabel!
     
     func setUp(with data: RelatedTopics) {
         
-        if let text = data.text {
-            characterTextLabel.text = text
+        if let array = data.text?.splitByHypen() {
+            if array.count > 0 {
+                let attributedText = NSAttributedString(string: array[0], attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])
+                characterTitleLabel.attributedText = attributedText
+            }
+            
+            if array.count > 1 {
+                characterDetailLabel.text = array[1]
+            }
         }
         
     }
