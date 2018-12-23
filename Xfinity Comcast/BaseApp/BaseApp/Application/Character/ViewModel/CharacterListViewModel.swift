@@ -10,15 +10,18 @@ import Foundation
 
 class CharacterListViewModel {
     
-    var charactoryFactory: CharacterFactory
+    var characterFactory: CharacterFactory
+    var titleString: String
     
-    init(appType: Constant.AppType) {
-        
+    
+    init() {
+        let appType = Constant.currentAppType
+        titleString = appType.rawValue
         switch appType {
         case .SimpsonsCharacterViewer:
-            charactoryFactory = SimpsonFactory()
+            characterFactory = SimpsonFactory()
         case .TheWireCharacterViewer:
-            charactoryFactory = WireCharacterFactory()
+            characterFactory = WireCharacterFactory()
 
         }
     }

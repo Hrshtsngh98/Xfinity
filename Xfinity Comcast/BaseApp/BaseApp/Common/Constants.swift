@@ -13,9 +13,11 @@ public typealias completionForCharacterModel = (CharacterModel?, Error?) -> ()
 
 public class Constant {
     
-    public enum AppType {
-        case TheWireCharacterViewer
-        case SimpsonsCharacterViewer
+    public static var currentAppType: AppType = .SimpsonsCharacterViewer
+    
+    public enum AppType: String {
+        case TheWireCharacterViewer = "The Wire Character Viewer"
+        case SimpsonsCharacterViewer = "Simpsons Character Viewer"
     }
     
     public enum ServiceUrls {
