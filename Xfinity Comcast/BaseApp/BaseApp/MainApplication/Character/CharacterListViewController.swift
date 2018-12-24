@@ -73,10 +73,6 @@ class CharacterListViewController: UIViewController {
         }
     }
     
-    @IBAction func closeAction(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func toggleLayoutAction() {
         enabled = !enabled
         if enabled {

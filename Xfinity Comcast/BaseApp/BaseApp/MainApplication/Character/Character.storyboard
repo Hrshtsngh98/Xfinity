@@ -67,12 +67,7 @@
                         <viewLayoutGuide key="safeArea" id="sQy-HM-1gq"/>
                     </view>
                     <navigationItem key="navigationItem" id="wYP-F7-cBs">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="wqL-DR-QrK">
-                            <connections>
-                                <action selector="closeAction:" destination="zFV-uj-M2G" id="g3q-4L-Biu"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Zfe-4r-wpm">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Zfe-4r-wpm">
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="gig-RY-7Z6">
                                 <rect key="frame" x="308" y="6.5" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
