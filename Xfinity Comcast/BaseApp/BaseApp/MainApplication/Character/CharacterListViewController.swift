@@ -118,7 +118,7 @@ extension CharacterListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard.init(name: Constant.StoryboardName.characterDetail, bundle: BaseAppBundleHelper.bundle)
         if let controller = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardID.characterDetailViewController) as? CharacterDetailViewController {
-            controller.relatedTopic = characterListViewModel.relatedTopics[indexPath.row]
+            controller.characterDetailViewModel = CharacterDetailViewModel(topic: characterListViewModel.relatedTopics[indexPath.row])
             splitViewController?.showDetailViewController(controller, sender: nil)
         }
     }

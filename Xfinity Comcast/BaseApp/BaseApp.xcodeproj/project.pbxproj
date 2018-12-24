@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE00E0CE21D16EBE004E519C /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00E0CD21D16EBE004E519C /* CharacterDetailViewModel.swift */; };
 		EE3A925F21D01B4300779737 /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A925E21D01B4300779737 /* CharacterListViewModel.swift */; };
 		EE91868121CEA63C00929C38 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91868021CEA63C00929C38 /* UIViewController+Alert.swift */; };
 		EE91868F21CEC6AF00929C38 /* CharacterCollectionViewRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE91868E21CEC6AF00929C38 /* CharacterCollectionViewRowCell.xib */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE00E0CD21D16EBE004E519C /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		EE3A925E21D01B4300779737 /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
 		EE91868021CEA63C00929C38 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		EE91868E21CEC6AF00929C38 /* CharacterCollectionViewRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCollectionViewRowCell.xib; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE00E0CC21D16EA7004E519C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE00E0CD21D16EBE004E519C /* CharacterDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		EE3A925D21D01B2900779737 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +163,7 @@
 		EECA305A21CF6F7200F25F0C /* CharacterDetail */ = {
 			isa = PBXGroup;
 			children = (
+				EE00E0CC21D16EA7004E519C /* ViewModel */,
 				EECA305B21CF6F9600F25F0C /* CharacterDetail.storyboard */,
 				EECA305D21CF6FA900F25F0C /* CharacterDetailViewController.swift */,
 			);
@@ -372,6 +383,7 @@
 				EECA305621CF19D800F25F0C /* BaseAppBundleHelper.swift in Sources */,
 				EE3A925F21D01B4300779737 /* CharacterListViewModel.swift in Sources */,
 				EED9F0F621CDF0E300D0D912 /* CharacterModel.swift in Sources */,
+				EE00E0CE21D16EBE004E519C /* CharacterDetailViewModel.swift in Sources */,
 				EED9F0FE21CDF30C00D0D912 /* CharacterFactory.swift in Sources */,
 				EED9F0FB21CDF0E300D0D912 /* Icon.swift in Sources */,
 			);
