@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE00E0CB21D15D00004E519C /* BaseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE00E0CA21D15D00004E519C /* BaseApp.framework */; };
 		EED9F07021CDE83E00D0D912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED9F06F21CDE83E00D0D912 /* AppDelegate.swift */; };
 		EED9F07221CDE83E00D0D912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED9F07121CDE83E00D0D912 /* ViewController.swift */; };
 		EED9F07521CDE83E00D0D912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED9F07321CDE83E00D0D912 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE00E0CA21D15D00004E519C /* BaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED9F06C21CDE83E00D0D912 /* Simpsons Character Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simpsons Character Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED9F06F21CDE83E00D0D912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EED9F07121CDE83E00D0D912 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE00E0CB21D15D00004E519C /* BaseApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +59,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE00E0C921D15D00004E519C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE00E0CA21D15D00004E519C /* BaseApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EED9F06321CDE83E00D0D912 = {
 			isa = PBXGroup;
 			children = (
 				EED9F06E21CDE83E00D0D912 /* Simpsons Character Viewer */,
 				EED9F08321CDE83F00D0D912 /* Simpsons Character ViewerTests */,
 				EED9F06D21CDE83E00D0D912 /* Products */,
+				EE00E0C921D15D00004E519C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

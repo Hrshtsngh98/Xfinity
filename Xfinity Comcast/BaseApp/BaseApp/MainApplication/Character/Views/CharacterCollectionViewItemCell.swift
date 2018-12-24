@@ -16,11 +16,9 @@ class CharacterCollectionViewItemCell: UICollectionViewCell {
             characterImageView.contentMode = .scaleAspectFit
         }
     }
-    @IBOutlet weak var characterTextLable: UILabel!
     @IBOutlet weak var characterTitleLabel: UILabel! {
         didSet {
             characterTitleLabel.numberOfLines = 0
-            characterTitleLabel
         }
     }
     
@@ -33,10 +31,6 @@ class CharacterCollectionViewItemCell: UICollectionViewCell {
             if array.count > 0 {
                 let attributedText = NSAttributedString(string: array[0], attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])
                 characterTitleLabel.attributedText = attributedText
-            }
-            
-            if array.count > 1 {
-                characterTextLable.text = array[1]
             }
         }
     }
