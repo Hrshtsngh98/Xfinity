@@ -15,6 +15,13 @@ class CharacterListViewController: UIViewController {
         static let characterCollectionViewItemCell = "CharacterCollectionViewItemCell"
     }
     @IBOutlet weak var characterListTable: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
+        didSet {
+            activityIndicator.color = UIColor.black
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.startAnimating()
+        }
+    }
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
             searchBar.placeholder = Constant.DefaultStrings.searchPlaceHolder
@@ -65,6 +72,9 @@ class CharacterListViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.characterListTable.reloadData()
                 }
+            }
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
             }
         }
     }

@@ -18,6 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Kz1-Xa-1LR">
+                                <rect key="frame" x="162.5" y="340.5" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="fBW-aX-Mq0"/>
+                                    <constraint firstAttribute="height" constant="50" id="haQ-4Q-Dcl"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tZU-96-lZt">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="zFV-uj-M2G" id="B0h-Ag-XFA"/>
+                                </connections>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PpE-3d-OfF">
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,24 +51,15 @@
                                     <outlet property="delegate" destination="zFV-uj-M2G" id="le4-1m-83l"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tZU-96-lZt">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="zFV-uj-M2G" id="B0h-Ag-XFA"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="0.79607843140000001" green="0.92156862750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="tZU-96-lZt" firstAttribute="trailing" secondItem="sQy-HM-1gq" secondAttribute="trailing" id="2Qc-aQ-8pv"/>
                             <constraint firstItem="tZU-96-lZt" firstAttribute="leading" secondItem="sQy-HM-1gq" secondAttribute="leading" id="2VW-9o-aFN"/>
                             <constraint firstItem="tZU-96-lZt" firstAttribute="top" secondItem="sQy-HM-1gq" secondAttribute="top" id="HRH-SX-Her"/>
+                            <constraint firstItem="Kz1-Xa-1LR" firstAttribute="centerX" secondItem="sQy-HM-1gq" secondAttribute="centerX" id="QdD-SD-sc3"/>
                             <constraint firstItem="PpE-3d-OfF" firstAttribute="bottom" secondItem="sQy-HM-1gq" secondAttribute="bottom" id="VpR-PF-aJ5"/>
+                            <constraint firstItem="Kz1-Xa-1LR" firstAttribute="centerY" secondItem="sQy-HM-1gq" secondAttribute="centerY" id="Y1d-Ac-mhq"/>
                             <constraint firstItem="PpE-3d-OfF" firstAttribute="trailing" secondItem="sQy-HM-1gq" secondAttribute="trailing" id="cgP-cb-pec"/>
                             <constraint firstItem="PpE-3d-OfF" firstAttribute="top" secondItem="tZU-96-lZt" secondAttribute="bottom" id="iXc-Ee-Rha"/>
                             <constraint firstItem="PpE-3d-OfF" firstAttribute="leading" secondItem="sQy-HM-1gq" secondAttribute="leading" id="xsR-uB-3TL"/>
@@ -74,6 +83,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="Kz1-Xa-1LR" id="XYE-gi-duq"/>
                         <outlet property="characterListTable" destination="PpE-3d-OfF" id="weG-G2-FSi"/>
                         <outlet property="searchBar" destination="tZU-96-lZt" id="Jh1-da-Ths"/>
                     </connections>
