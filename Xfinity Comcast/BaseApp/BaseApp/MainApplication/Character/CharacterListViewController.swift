@@ -10,24 +10,32 @@ import UIKit
 
 class CharacterListViewController: UIViewController {
     
+    private struct K {
+        static let characterCollectionViewRowCell = "CharacterCollectionViewRowCell"
+        static let characterCollectionViewItemCell = "CharacterCollectionViewItemCell"
+    }
     @IBOutlet weak var characterListTable: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
+        didSet {
+            activityIndicator.color = UIColor.black
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.startAnimating()
+        }
+    }
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
-            searchBar.placeholder = "Search Character"
+            searchBar.placeholder = Constant.DefaultStrings.searchPlaceHolder
         }
     }
     
-    var relatedTopics: [RelatedTopics] = []
-    var backUpList: [RelatedTopics] = []
-    let inset = 8
+    let itemInset: CGFloat = 8
+    let zero: CGFloat = 8
+    let itemHeightWhenList: CGFloat = 40
     let minimumLineSpacing: CGFloat = 10
     let minimumInteritemSpacing: CGFloat = 10
     var cellsPerRow = 1
     var enabled = true
     var characterListViewModel: CharacterListViewModel = CharacterListViewModel()
-    
-    private let characterCollectionViewRowCell = "CharacterCollectionViewRowCell"
-    private let characterCollectionViewItemCell = "CharacterCollectionViewItemCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,32 +48,27 @@ class CharacterListViewController: UIViewController {
     
     func setUpCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
+        layout.sectionInset = UIEdgeInsets(top: zero, left: itemInset, bottom: zero, right: itemInset)
         characterListTable.collectionViewLayout = layout
     }
     
     func registerNib() {
-        characterListTable.register(UINib(nibName: characterCollectionViewRowCell, bundle: BaseAppBundleHelper.bundle), forCellWithReuseIdentifier: characterCollectionViewRowCell)
-        characterListTable.register(UINib(nibName: characterCollectionViewItemCell, bundle: BaseAppBundleHelper.bundle), forCellWithReuseIdentifier: characterCollectionViewItemCell)
+        characterListTable.register(UINib(nibName: K.characterCollectionViewRowCell, bundle: BaseAppBundleHelper.bundle), forCellWithReuseIdentifier: K.characterCollectionViewRowCell)
+        characterListTable.register(UINib(nibName: K.characterCollectionViewItemCell, bundle: BaseAppBundleHelper.bundle), forCellWithReuseIdentifier: K.characterCollectionViewItemCell)
     }
     
     func setUpData() {
-        characterListViewModel = CharacterListViewModel()
-        
-//        guard let characterListViewModel = characterListViewModel else {
-//            return
-//        }
-        
         title = characterListViewModel.titleString
-        characterListViewModel.characterFactory.getData { (model, error) in
+        characterListViewModel.getData { (_, error) in
             if let error = error {
-                self.showErrorAlert(error: error, alertActions: nil)
+                self.showErrorAlert(title: Constant.DefaultStrings.error, message: error.localizedDescription, alertActions: nil)
             } else {
-                self.relatedTopics = model!.relatedTopics!
-                self.backUpList = self.relatedTopics
                 DispatchQueue.main.async {
                     self.characterListTable.reloadData()
                 }
+            }
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
             }
         }
     }
@@ -88,22 +91,22 @@ class CharacterListViewController: UIViewController {
 
 extension CharacterListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return relatedTopics.count
+        return characterListViewModel.relatedTopics.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if enabled {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: characterCollectionViewRowCell, for: indexPath) as? CharacterCollectionViewRowCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.characterCollectionViewRowCell, for: indexPath) as? CharacterCollectionViewRowCell else {
                 return UICollectionViewCell()
             }
-            cell.setUp(with: relatedTopics[indexPath.row])
+            cell.setUp(with: characterListViewModel.relatedTopics[indexPath.row])
             return cell
         } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: characterCollectionViewItemCell, for: indexPath) as? CharacterCollectionViewItemCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.characterCollectionViewItemCell, for: indexPath) as? CharacterCollectionViewItemCell else {
                 return UICollectionViewCell()
             }
-            cell.setUp(with: relatedTopics[indexPath.row])
+            cell.setUp(with: characterListViewModel.relatedTopics[indexPath.row])
             return cell
         }
     }
@@ -113,9 +116,9 @@ extension CharacterListViewController: UICollectionViewDataSource {
 extension CharacterListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard.init(name: "CharacterDetail", bundle: BaseAppBundleHelper.bundle)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "CharacterDetailViewController") as? CharacterDetailViewController {
-            controller.relatedTopic = relatedTopics[indexPath.row]
+        let storyboard = UIStoryboard.init(name: Constant.StoryboardName.characterDetail, bundle: BaseAppBundleHelper.bundle)
+        if let controller = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardID.characterDetailViewController) as? CharacterDetailViewController {
+            controller.relatedTopic = characterListViewModel.relatedTopics[indexPath.row]
             splitViewController?.showDetailViewController(controller, sender: nil)
         }
     }
@@ -123,17 +126,17 @@ extension CharacterListViewController: UICollectionViewDelegate {
 }
 
 extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let marginsAndInsets = CGFloat(inset * 2) + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
+        let marginsAndInsets = CGFloat(itemInset * 2) + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
         let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
         if enabled {
-            return CGSize(width: itemWidth, height: itemWidth/2)
+            return CGSize(width: itemWidth, height: itemHeightWhenList)
         } else {
-            return CGSize(width: itemWidth, height: itemWidth*2)
+            return CGSize(width: itemWidth, height: itemWidth)
         }
     }
-    
+
 }
 
 extension CharacterListViewController: UISplitViewControllerDelegate {
@@ -145,17 +148,9 @@ extension CharacterListViewController: UISplitViewControllerDelegate {
 extension CharacterListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        relatedTopics = backUpList
-        if searchText.count == 0 {
-            characterListTable.reloadData()
-            return
+        characterListViewModel.filterCharacterList(searchText: searchText) {
+            self.characterListTable.reloadData()
         }
-//        guard let characterListViewModel = characterListViewModel else {
-//            return
-//        }
-        
-        relatedTopics = characterListViewModel.filterCharacterList(searchText: searchText, relatedTopics: relatedTopics)
-        characterListTable.reloadData()
     }
     
 }

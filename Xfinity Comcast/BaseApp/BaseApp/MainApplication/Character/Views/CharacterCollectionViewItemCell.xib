@@ -13,22 +13,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CharacterCollectionViewItemCell" id="H7G-sQ-UPa" customClass="CharacterCollectionViewItemCell" customModule="BaseApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="370" height="527"/>
+            <rect key="frame" x="0.0" y="0.0" width="370" height="282"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="370" height="527"/>
+                <rect key="frame" x="0.0" y="0.0" width="370" height="282"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-image" translatesAutoresizingMaskIntoConstraints="NO" id="zJB-NB-brb">
-                        <rect key="frame" x="8" y="36" width="354" height="241.5"/>
+                        <rect key="frame" x="8" y="36" width="354" height="246"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVc-ie-U5t">
-                        <rect key="frame" x="8" y="277.5" width="354" height="241.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdI-ye-xur">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdI-ye-xur">
                         <rect key="frame" x="8" y="8" width="354" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="KJE-V7-w3v"/>
@@ -41,27 +35,21 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="dVc-ie-U5t" firstAttribute="height" secondItem="zJB-NB-brb" secondAttribute="height" id="3lX-fV-zEH"/>
                 <constraint firstItem="bdI-ye-xur" firstAttribute="top" secondItem="H7G-sQ-UPa" secondAttribute="top" constant="8" id="7lp-oN-ohr"/>
-                <constraint firstItem="dVc-ie-U5t" firstAttribute="width" secondItem="zJB-NB-brb" secondAttribute="width" id="8TY-36-awf"/>
                 <constraint firstItem="zJB-NB-brb" firstAttribute="top" secondItem="bdI-ye-xur" secondAttribute="bottom" constant="8" id="CPm-Nd-M0M"/>
+                <constraint firstAttribute="bottom" secondItem="zJB-NB-brb" secondAttribute="bottom" id="HgS-pX-IfE"/>
                 <constraint firstAttribute="trailing" secondItem="zJB-NB-brb" secondAttribute="trailing" constant="8" id="PpC-QU-bXG"/>
                 <constraint firstItem="zJB-NB-brb" firstAttribute="leading" secondItem="H7G-sQ-UPa" secondAttribute="leading" constant="8" id="Q2t-MC-LC9"/>
-                <constraint firstAttribute="bottom" secondItem="dVc-ie-U5t" secondAttribute="bottom" constant="8" id="fGF-kk-Y6P"/>
-                <constraint firstAttribute="trailing" secondItem="dVc-ie-U5t" secondAttribute="trailing" constant="8" id="gxh-F7-y1Y"/>
-                <constraint firstItem="dVc-ie-U5t" firstAttribute="leading" secondItem="H7G-sQ-UPa" secondAttribute="leading" constant="8" id="juE-Iw-cCB"/>
                 <constraint firstAttribute="trailing" secondItem="bdI-ye-xur" secondAttribute="trailing" constant="8" id="pxQ-fH-GFJ"/>
                 <constraint firstItem="bdI-ye-xur" firstAttribute="leading" secondItem="H7G-sQ-UPa" secondAttribute="leading" constant="8" id="q10-QD-eET"/>
-                <constraint firstItem="dVc-ie-U5t" firstAttribute="top" secondItem="zJB-NB-brb" secondAttribute="bottom" id="x9U-59-L51"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="V8P-au-DYs"/>
-            <size key="customSize" width="370" height="527"/>
+            <size key="customSize" width="370" height="282"/>
             <connections>
                 <outlet property="characterImageView" destination="zJB-NB-brb" id="XiV-KB-Wcw"/>
-                <outlet property="characterTextLable" destination="dVc-ie-U5t" id="Jpt-AA-PLM"/>
                 <outlet property="characterTitleLabel" destination="bdI-ye-xur" id="zCG-r9-5fH"/>
             </connections>
-            <point key="canvasLocation" x="156.80000000000001" y="170.46476761619192"/>
+            <point key="canvasLocation" x="156.80000000000001" y="60.26986506746627"/>
         </collectionViewCell>
     </objects>
     <resources>

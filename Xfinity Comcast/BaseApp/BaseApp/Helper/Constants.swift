@@ -8,10 +8,11 @@
 
 import Foundation
 
-public typealias completionHandler = (Data?, Error?) -> ()
+public typealias completionHandler = () -> ()
+public typealias serviceCompletionHandler = (Data?, Error?) -> ()
 public typealias completionForCharacterModel = (CharacterModel?, Error?) -> ()
 
-public class Constant {
+public struct Constant {
     
     public static var currentAppType: AppType = .SimpsonsCharacterViewer
     
@@ -25,10 +26,26 @@ public class Constant {
         static let theWireCharacterViewer = "http://api.duckduckgo.com/?q=the+wire+characters&format=json"
     }
     
-    public enum Strings {
+    public enum DefaultStrings {
         static let defaultImageName = "default_image"
         static let characterDetailString = "Character Detail"
         static let characterDetailTitleString = "Character Name"
+        static let searchPlaceHolder = "Search Character"
+        static let error = "Error"
+        static let ok = "Ok"
     }
     
+    public enum StoryboardName {
+        static let character = "Character"
+        static let characterDetail = "CharacterDetail"
+    }
+    
+    public enum StoryboardID {
+        static let baseSplitViewController = "UISplitViewController"
+        static let characterDetailViewController = "CharacterDetailViewController"
+    }
+    
+    public enum Separator {
+        static let hypenSpace = " - "
+    }
 }

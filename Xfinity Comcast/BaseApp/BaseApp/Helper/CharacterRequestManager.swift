@@ -10,7 +10,7 @@ import Foundation
 
 class CharacterRequestManager {
     
-    class func requestCharacter(urlString: String, completion: @escaping completionHandler) {
+    class func requestCharacter(urlString: String, completion: @escaping serviceCompletionHandler) {
         guard let url = URL(string: urlString) else {
             return
         }

@@ -20,31 +20,21 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvt-84-wL0">
-                        <rect key="frame" x="8" y="8" width="632" height="0.0"/>
+                        <rect key="frame" x="8" y="8" width="632" height="111"/>
                         <attributedString key="attributedText"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8G-9P-LAm">
-                        <rect key="frame" x="8" y="16" width="632" height="95"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="zvt-84-wL0" secondAttribute="trailing" constant="8" id="4L0-Qq-0rh"/>
-                <constraint firstAttribute="bottom" secondItem="d8G-9P-LAm" secondAttribute="bottom" constant="8" id="Fgl-RL-Hul"/>
+                <constraint firstAttribute="bottom" secondItem="zvt-84-wL0" secondAttribute="bottom" id="BUH-aj-cIb"/>
                 <constraint firstItem="zvt-84-wL0" firstAttribute="top" secondItem="7fN-av-a0P" secondAttribute="top" constant="8" id="R5b-Dl-g0p"/>
-                <constraint firstItem="d8G-9P-LAm" firstAttribute="top" secondItem="zvt-84-wL0" secondAttribute="bottom" constant="8" id="Zae-gc-yiC"/>
-                <constraint firstItem="d8G-9P-LAm" firstAttribute="leading" secondItem="7fN-av-a0P" secondAttribute="leading" constant="8" id="ljj-Vr-WAZ"/>
-                <constraint firstAttribute="trailing" secondItem="d8G-9P-LAm" secondAttribute="trailing" constant="8" id="o1U-eU-KLq"/>
                 <constraint firstItem="zvt-84-wL0" firstAttribute="leading" secondItem="7fN-av-a0P" secondAttribute="leading" constant="8" id="u87-nF-46R"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="PJT-7v-UaR"/>
             <size key="customSize" width="648" height="119"/>
             <connections>
-                <outlet property="characterDetailLabel" destination="d8G-9P-LAm" id="ghL-IP-c4e"/>
                 <outlet property="characterTitleLabel" destination="zvt-84-wL0" id="yBd-1E-DSs"/>
             </connections>
             <point key="canvasLocation" x="235.19999999999999" y="23.838080959520241"/>

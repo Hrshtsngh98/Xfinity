@@ -10,9 +10,9 @@ import Foundation
 
 extension UIViewController {
     
-    public func showErrorAlert(error: Error, alertActions: [UIAlertAction]?) {
-        let alterController = UIAlertController.init(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        alterController.addAction(UIAlertAction.init(title: "Ok", style: .default, handler: nil))
+    public func showErrorAlert(title: String, message: String?, alertActions: [UIAlertAction]?) {
+        let alterController = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        alterController.addAction(UIAlertAction.init(title: Constant.DefaultStrings.ok, style: .default, handler: nil))
         
         if let actions = alertActions, actions.count != 0 {
             for action in actions {
