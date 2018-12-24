@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE00E0CB21D15D00004E519C /* BaseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE00E0CA21D15D00004E519C /* BaseApp.framework */; };
+		EE03320E21D18AA9002085F6 /* CharacterViewerFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE03320D21D18AA9002085F6 /* CharacterViewerFramework.framework */; };
 		EED9F07021CDE83E00D0D912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED9F06F21CDE83E00D0D912 /* AppDelegate.swift */; };
 		EED9F07221CDE83E00D0D912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED9F07121CDE83E00D0D912 /* ViewController.swift */; };
 		EED9F07521CDE83E00D0D912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED9F07321CDE83E00D0D912 /* Main.storyboard */; };
@@ -27,7 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EE00E0CA21D15D00004E519C /* BaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE03320D21D18AA9002085F6 /* CharacterViewerFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CharacterViewerFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED9F06C21CDE83E00D0D912 /* Simpsons Character Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simpsons Character Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED9F06F21CDE83E00D0D912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EED9F07121CDE83E00D0D912 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE00E0CB21D15D00004E519C /* BaseApp.framework in Frameworks */,
+				EE03320E21D18AA9002085F6 /* CharacterViewerFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 		EE00E0C921D15D00004E519C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EE00E0CA21D15D00004E519C /* BaseApp.framework */,
+				EE03320D21D18AA9002085F6 /* CharacterViewerFramework.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

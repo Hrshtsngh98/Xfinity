@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import BaseApp
+import CharacterViewerFramework
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

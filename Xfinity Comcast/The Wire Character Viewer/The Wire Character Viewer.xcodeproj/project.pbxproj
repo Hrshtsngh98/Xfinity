@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE91868321CEAA3200929C38 /* BaseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE91868221CEAA3200929C38 /* BaseApp.framework */; };
+		EE03320C21D18A9E002085F6 /* CharacterViewerFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE03320B21D18A9E002085F6 /* CharacterViewerFramework.framework */; };
 		EED9F09C21CDE87000D0D912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED9F09B21CDE87000D0D912 /* AppDelegate.swift */; };
 		EED9F09E21CDE87000D0D912 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED9F09D21CDE87000D0D912 /* ViewController.swift */; };
 		EED9F0A121CDE87000D0D912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED9F09F21CDE87000D0D912 /* Main.storyboard */; };
@@ -27,7 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EE91868221CEAA3200929C38 /* BaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE03320B21D18A9E002085F6 /* CharacterViewerFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CharacterViewerFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED9F09821CDE87000D0D912 /* The Wire Character Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Wire Character Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED9F09B21CDE87000D0D912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EED9F09D21CDE87000D0D912 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE91868321CEAA3200929C38 /* BaseApp.framework in Frameworks */,
+				EE03320C21D18A9E002085F6 /* CharacterViewerFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +103,7 @@
 		EED9F12121CE09D600D0D912 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EE91868221CEAA3200929C38 /* BaseApp.framework */,
+				EE03320B21D18A9E002085F6 /* CharacterViewerFramework.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
