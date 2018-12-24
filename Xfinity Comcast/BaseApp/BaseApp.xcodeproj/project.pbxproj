@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE3A925F21D01B4300779737 /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A925E21D01B4300779737 /* CharacterListViewModel.swift */; };
+		EE91868121CEA63C00929C38 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91868021CEA63C00929C38 /* UIViewController+Alert.swift */; };
+		EE91868F21CEC6AF00929C38 /* CharacterCollectionViewRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE91868E21CEC6AF00929C38 /* CharacterCollectionViewRowCell.xib */; };
+		EE91869121CEC6C800929C38 /* CharacterCollectionViewRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91869021CEC6C800929C38 /* CharacterCollectionViewRowCell.swift */; };
+		EE91869321CEC70B00929C38 /* CharacterCollectionViewItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91869221CEC70B00929C38 /* CharacterCollectionViewItemCell.swift */; };
+		EE91869521CEC71E00929C38 /* CharacterCollectionViewItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE91869421CEC71E00929C38 /* CharacterCollectionViewItemCell.xib */; };
+		EE91869721CEC86200929C38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE91869621CEC86200929C38 /* Assets.xcassets */; };
+		EECA305021CF0E8400F25F0C /* Character.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECA304F21CF0E8400F25F0C /* Character.storyboard */; };
+		EECA305221CF0EA500F25F0C /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECA305121CF0EA500F25F0C /* CharacterListViewController.swift */; };
+		EECA305421CF0FCD00F25F0C /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECA305321CF0FCD00F25F0C /* ApplicationManager.swift */; };
+		EECA305621CF19D800F25F0C /* BaseAppBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECA305521CF19D800F25F0C /* BaseAppBundleHelper.swift */; };
+		EECA305821CF67AE00F25F0C /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EECA305721CF67AE00F25F0C /* SDWebImage.framework */; };
+		EECA305C21CF6F9600F25F0C /* CharacterDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EECA305B21CF6F9600F25F0C /* CharacterDetail.storyboard */; };
+		EECA305E21CF6FA900F25F0C /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECA305D21CF6FA900F25F0C /* CharacterDetailViewController.swift */; };
+		EECA306021CF743C00F25F0C /* String+SplitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECA305F21CF743C00F25F0C /* String+SplitHelper.swift */; };
 		EED9F0CF21CDE91F00D0D912 /* BaseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EED9F0C521CDE91E00D0D912 /* BaseApp.framework */; };
 		EED9F0D421CDE91F00D0D912 /* BaseAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED9F0D321CDE91F00D0D912 /* BaseAppTests.swift */; };
 		EED9F0D621CDE91F00D0D912 /* BaseApp.h in Headers */ = {isa = PBXBuildFile; fileRef = EED9F0C821CDE91E00D0D912 /* BaseApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +46,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE3A925E21D01B4300779737 /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
+		EE91868021CEA63C00929C38 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		EE91868E21CEC6AF00929C38 /* CharacterCollectionViewRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCollectionViewRowCell.xib; sourceTree = "<group>"; };
+		EE91869021CEC6C800929C38 /* CharacterCollectionViewRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewRowCell.swift; sourceTree = "<group>"; };
+		EE91869221CEC70B00929C38 /* CharacterCollectionViewItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewItemCell.swift; sourceTree = "<group>"; };
+		EE91869421CEC71E00929C38 /* CharacterCollectionViewItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCollectionViewItemCell.xib; sourceTree = "<group>"; };
+		EE91869621CEC86200929C38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EECA304F21CF0E8400F25F0C /* Character.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Character.storyboard; sourceTree = "<group>"; };
+		EECA305121CF0EA500F25F0C /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
+		EECA305321CF0FCD00F25F0C /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
+		EECA305521CF19D800F25F0C /* BaseAppBundleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAppBundleHelper.swift; sourceTree = "<group>"; };
+		EECA305721CF67AE00F25F0C /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		EECA305B21CF6F9600F25F0C /* CharacterDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterDetail.storyboard; sourceTree = "<group>"; };
+		EECA305D21CF6FA900F25F0C /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		EECA305F21CF743C00F25F0C /* String+SplitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+SplitHelper.swift"; sourceTree = "<group>"; };
 		EED9F0C521CDE91E00D0D912 /* BaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED9F0C821CDE91E00D0D912 /* BaseApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseApp.h; sourceTree = "<group>"; };
 		EED9F0C921CDE91E00D0D912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECA305821CF67AE00F25F0C /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +97,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE3A925D21D01B2900779737 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE3A925E21D01B4300779737 /* CharacterListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EE91867E21CEA5F700929C38 /* MainApplication */ = {
+			isa = PBXGroup;
+			children = (
+				EE91868421CEB8C000929C38 /* Character */,
+				EECA305A21CF6F7200F25F0C /* CharacterDetail */,
+				EED9F10321CE036B00D0D912 /* AppTypeFactory */,
+			);
+			path = MainApplication;
+			sourceTree = "<group>";
+		};
+		EE91867F21CEA62400929C38 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EECA305321CF0FCD00F25F0C /* ApplicationManager.swift */,
+				EED9F0DF21CDEACA00D0D912 /* Constants.swift */,
+				EED9F0E121CDEBAF00D0D912 /* CharacterRequestManager.swift */,
+				EECA305521CF19D800F25F0C /* BaseAppBundleHelper.swift */,
+				EE91868021CEA63C00929C38 /* UIViewController+Alert.swift */,
+				EECA305F21CF743C00F25F0C /* String+SplitHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		EE91868421CEB8C000929C38 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				EE3A925D21D01B2900779737 /* ViewModel */,
+				EE91868921CEC60B00929C38 /* Views */,
+				EECA304F21CF0E8400F25F0C /* Character.storyboard */,
+				EECA305121CF0EA500F25F0C /* CharacterListViewController.swift */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		EE91868921CEC60B00929C38 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE91869021CEC6C800929C38 /* CharacterCollectionViewRowCell.swift */,
+				EE91868E21CEC6AF00929C38 /* CharacterCollectionViewRowCell.xib */,
+				EE91869221CEC70B00929C38 /* CharacterCollectionViewItemCell.swift */,
+				EE91869421CEC71E00929C38 /* CharacterCollectionViewItemCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EECA305A21CF6F7200F25F0C /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EECA305B21CF6F9600F25F0C /* CharacterDetail.storyboard */,
+				EECA305D21CF6FA900F25F0C /* CharacterDetailViewController.swift */,
+			);
+			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
 		EED9F0BB21CDE91E00D0D912 = {
 			isa = PBXGroup;
 			children = (
 				EED9F0C721CDE91E00D0D912 /* BaseApp */,
 				EED9F0D221CDE91F00D0D912 /* BaseAppTests */,
 				EED9F0C621CDE91E00D0D912 /* Products */,
+				EECA305721CF67AE00F25F0C /* SDWebImage.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,12 +181,12 @@
 		EED9F0C721CDE91E00D0D912 /* BaseApp */ = {
 			isa = PBXGroup;
 			children = (
+				EE91867F21CEA62400929C38 /* Helper */,
+				EE91867E21CEA5F700929C38 /* MainApplication */,
+				EED9F0E321CDEBB600D0D912 /* Model Class */,
+				EE91869621CEC86200929C38 /* Assets.xcassets */,
 				EED9F0C821CDE91E00D0D912 /* BaseApp.h */,
 				EED9F0C921CDE91E00D0D912 /* Info.plist */,
-				EED9F0DF21CDEACA00D0D912 /* Constants.swift */,
-				EED9F0E121CDEBAF00D0D912 /* CharacterRequestManager.swift */,
-				EED9F10321CE036B00D0D912 /* AppTypeFactory */,
-				EED9F0E321CDEBB600D0D912 /* Model */,
 			);
 			path = BaseApp;
 			sourceTree = "<group>";
@@ -106,14 +200,14 @@
 			path = BaseAppTests;
 			sourceTree = "<group>";
 		};
-		EED9F0E321CDEBB600D0D912 /* Model */ = {
+		EED9F0E321CDEBB600D0D912 /* Model Class */ = {
 			isa = PBXGroup;
 			children = (
 				EED9F0F421CDF0E300D0D912 /* Icon.swift */,
 				EED9F0EF21CDF0E200D0D912 /* CharacterModel.swift */,
 				EED9F0F321CDF0E200D0D912 /* RelatedTopics.swift */,
 			);
-			path = Model;
+			path = "Model Class";
 			sourceTree = "<group>";
 		};
 		EED9F10321CE036B00D0D912 /* AppTypeFactory */ = {
@@ -148,6 +242,7 @@
 				EED9F0C121CDE91E00D0D912 /* Sources */,
 				EED9F0C221CDE91E00D0D912 /* Frameworks */,
 				EED9F0C321CDE91E00D0D912 /* Resources */,
+				EECA305921CF67CB00F25F0C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -218,6 +313,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECA305021CF0E8400F25F0C /* Character.storyboard in Resources */,
+				EE91868F21CEC6AF00929C38 /* CharacterCollectionViewRowCell.xib in Resources */,
+				EE91869721CEC86200929C38 /* Assets.xcassets in Resources */,
+				EE91869521CEC71E00929C38 /* CharacterCollectionViewItemCell.xib in Resources */,
+				EECA305C21CF6F9600F25F0C /* CharacterDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,16 +330,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EECA305921CF67CB00F25F0C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EED9F0C121CDE91E00D0D912 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE91868121CEA63C00929C38 /* UIViewController+Alert.swift in Sources */,
+				EECA306021CF743C00F25F0C /* String+SplitHelper.swift in Sources */,
 				EED9F0FA21CDF0E300D0D912 /* RelatedTopics.swift in Sources */,
 				EED9F10221CDF34C00D0D912 /* WireCharacterFactory.swift in Sources */,
+				EE91869121CEC6C800929C38 /* CharacterCollectionViewRowCell.swift in Sources */,
+				EECA305221CF0EA500F25F0C /* CharacterListViewController.swift in Sources */,
 				EED9F10021CDF33700D0D912 /* SimpsonFactory.swift in Sources */,
 				EED9F0E021CDEACA00D0D912 /* Constants.swift in Sources */,
+				EE91869321CEC70B00929C38 /* CharacterCollectionViewItemCell.swift in Sources */,
 				EED9F0E221CDEBAF00D0D912 /* CharacterRequestManager.swift in Sources */,
+				EECA305421CF0FCD00F25F0C /* ApplicationManager.swift in Sources */,
+				EECA305E21CF6FA900F25F0C /* CharacterDetailViewController.swift in Sources */,
+				EECA305621CF19D800F25F0C /* BaseAppBundleHelper.swift in Sources */,
+				EE3A925F21D01B4300779737 /* CharacterListViewModel.swift in Sources */,
 				EED9F0F621CDF0E300D0D912 /* CharacterModel.swift in Sources */,
 				EED9F0FE21CDF30C00D0D912 /* CharacterFactory.swift in Sources */,
 				EED9F0FB21CDF0E300D0D912 /* Icon.swift in Sources */,
@@ -317,7 +448,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -375,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -398,8 +529,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BaseApp/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -425,8 +561,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BaseApp/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
