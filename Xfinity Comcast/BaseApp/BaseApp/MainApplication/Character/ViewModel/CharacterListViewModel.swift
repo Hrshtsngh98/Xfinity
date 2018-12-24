@@ -25,4 +25,9 @@ class CharacterListViewModel {
 
         }
     }
+    
+    func filterCharacterList(searchText: String, relatedTopics: [RelatedTopics]) -> [RelatedTopics] {
+        let newList = relatedTopics.filter({$0.text?.contains(searchText) ?? false})
+        return newList
+    }
 }

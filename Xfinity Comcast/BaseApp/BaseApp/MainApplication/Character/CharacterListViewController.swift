@@ -11,13 +11,20 @@ import UIKit
 class CharacterListViewController: UIViewController {
     
     @IBOutlet weak var characterListTable: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+            searchBar.placeholder = "Search Character"
+        }
+    }
     
     var relatedTopics: [RelatedTopics] = []
+    var backUpList: [RelatedTopics] = []
     let inset = 8
     let minimumLineSpacing: CGFloat = 10
     let minimumInteritemSpacing: CGFloat = 10
     var cellsPerRow = 1
     var enabled = true
+    var characterListViewModel: CharacterListViewModel = CharacterListViewModel()
     
     private let characterCollectionViewRowCell = "CharacterCollectionViewRowCell"
     private let characterCollectionViewItemCell = "CharacterCollectionViewItemCell"
@@ -43,13 +50,19 @@ class CharacterListViewController: UIViewController {
     }
     
     func setUpData() {
-        let characterListViewModel = CharacterListViewModel()
+        characterListViewModel = CharacterListViewModel()
+        
+//        guard let characterListViewModel = characterListViewModel else {
+//            return
+//        }
+        
         title = characterListViewModel.titleString
         characterListViewModel.characterFactory.getData { (model, error) in
             if let error = error {
                 self.showErrorAlert(error: error, alertActions: nil)
             } else {
                 self.relatedTopics = model!.relatedTopics!
+                self.backUpList = self.relatedTopics
                 DispatchQueue.main.async {
                     self.characterListTable.reloadData()
                 }
@@ -127,4 +140,22 @@ extension CharacterListViewController: UISplitViewControllerDelegate {
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
     }
+}
+
+extension CharacterListViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        relatedTopics = backUpList
+        if searchText.count == 0 {
+            characterListTable.reloadData()
+            return
+        }
+//        guard let characterListViewModel = characterListViewModel else {
+//            return
+//        }
+        
+        relatedTopics = characterListViewModel.filterCharacterList(searchText: searchText, relatedTopics: relatedTopics)
+        characterListTable.reloadData()
+    }
+    
 }

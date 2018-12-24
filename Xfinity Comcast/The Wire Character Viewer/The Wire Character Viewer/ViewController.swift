@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     }
     
     @objc func openApp() {
-        if let viewController = ApplicationManager.initialViewController(appType: .TheWireCharacterViewer) {
+        if let viewController = ApplicationManager.initialViewController(appType: .SimpsonsCharacterViewer) {
             present(viewController, animated: true, completion: nil)
         }
     }

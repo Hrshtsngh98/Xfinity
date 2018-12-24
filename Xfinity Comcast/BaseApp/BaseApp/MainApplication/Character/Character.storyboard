@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PpE-3d-OfF">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IfE-a5-Gdj">
                                     <size key="itemSize" width="50" height="50"/>
@@ -33,13 +33,27 @@
                                     <outlet property="delegate" destination="zFV-uj-M2G" id="le4-1m-83l"/>
                                 </connections>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tZU-96-lZt">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="zFV-uj-M2G" id="B0h-Ag-XFA"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="0.79607843140000001" green="0.92156862750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="sQy-HM-1gq" firstAttribute="bottom" secondItem="PpE-3d-OfF" secondAttribute="bottom" id="7zs-4X-09O"/>
-                            <constraint firstItem="sQy-HM-1gq" firstAttribute="trailing" secondItem="PpE-3d-OfF" secondAttribute="trailing" id="9ow-j8-Kap"/>
-                            <constraint firstItem="PpE-3d-OfF" firstAttribute="top" secondItem="sQy-HM-1gq" secondAttribute="top" id="CVo-um-7xF"/>
-                            <constraint firstItem="PpE-3d-OfF" firstAttribute="leading" secondItem="sQy-HM-1gq" secondAttribute="leading" id="WNc-SJ-tcf"/>
+                            <constraint firstItem="tZU-96-lZt" firstAttribute="trailing" secondItem="sQy-HM-1gq" secondAttribute="trailing" id="2Qc-aQ-8pv"/>
+                            <constraint firstItem="tZU-96-lZt" firstAttribute="leading" secondItem="sQy-HM-1gq" secondAttribute="leading" id="2VW-9o-aFN"/>
+                            <constraint firstItem="tZU-96-lZt" firstAttribute="top" secondItem="sQy-HM-1gq" secondAttribute="top" id="HRH-SX-Her"/>
+                            <constraint firstItem="PpE-3d-OfF" firstAttribute="bottom" secondItem="sQy-HM-1gq" secondAttribute="bottom" id="VpR-PF-aJ5"/>
+                            <constraint firstItem="PpE-3d-OfF" firstAttribute="trailing" secondItem="sQy-HM-1gq" secondAttribute="trailing" id="cgP-cb-pec"/>
+                            <constraint firstItem="PpE-3d-OfF" firstAttribute="top" secondItem="tZU-96-lZt" secondAttribute="bottom" id="iXc-Ee-Rha"/>
+                            <constraint firstItem="PpE-3d-OfF" firstAttribute="leading" secondItem="sQy-HM-1gq" secondAttribute="leading" id="xsR-uB-3TL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sQy-HM-1gq"/>
                     </view>
@@ -61,11 +75,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="characterListTable" destination="PpE-3d-OfF" id="weG-G2-FSi"/>
+                        <outlet property="searchBar" destination="tZU-96-lZt" id="Jh1-da-Ths"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ay-gv-rZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="306" y="-340"/>
+            <point key="canvasLocation" x="304.80000000000001" y="-340.47976011994007"/>
         </scene>
         <!--CharacterDetail-->
         <scene sceneID="cwg-mI-Ldt">
