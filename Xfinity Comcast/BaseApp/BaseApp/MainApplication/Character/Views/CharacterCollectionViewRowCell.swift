@@ -13,11 +13,9 @@ class CharacterCollectionViewRowCell: UICollectionViewCell {
     @IBOutlet weak var characterTitleLabel: UILabel!
     
     func setUp(with data: RelatedTopics) {
-        if let array = data.text?.splitByHypen() {
-            if array.count > 0 {
-                let attributedText = NSAttributedString(string: array[0], attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])
-                characterTitleLabel.attributedText = attributedText
-            }
+        if let array = data.text?.splitByHypen(), let titleString = array.first {
+            let attributedText = NSAttributedString(string: titleString, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])
+            characterTitleLabel.attributedText = attributedText
         }
         
     }
