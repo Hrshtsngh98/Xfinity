@@ -118,7 +118,7 @@
 		EE91867E21CEA5F700929C38 /* MainApplication */ = {
 			isa = PBXGroup;
 			children = (
-				EE91868421CEB8C000929C38 /* Character */,
+				EE91868421CEB8C000929C38 /* CharacterList */,
 				EECA305A21CF6F7200F25F0C /* CharacterDetail */,
 				EED9F10321CE036B00D0D912 /* AppTypeFactory */,
 			);
@@ -138,7 +138,7 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		EE91868421CEB8C000929C38 /* Character */ = {
+		EE91868421CEB8C000929C38 /* CharacterList */ = {
 			isa = PBXGroup;
 			children = (
 				EE3A925D21D01B2900779737 /* ViewModel */,
@@ -146,7 +146,7 @@
 				EECA304F21CF0E8400F25F0C /* Character.storyboard */,
 				EECA305121CF0EA500F25F0C /* CharacterListViewController.swift */,
 			);
-			path = Character;
+			path = CharacterList;
 			sourceTree = "<group>";
 		};
 		EE91868921CEC60B00929C38 /* Views */ = {
@@ -194,7 +194,7 @@
 			children = (
 				EE91867F21CEA62400929C38 /* Helper */,
 				EE91867E21CEA5F700929C38 /* MainApplication */,
-				EED9F0E321CDEBB600D0D912 /* Model Class */,
+				EED9F0E321CDEBB600D0D912 /* Model Classes */,
 				EE91869621CEC86200929C38 /* Assets.xcassets */,
 				EED9F0C821CDE91E00D0D912 /* BaseApp.h */,
 				EED9F0C921CDE91E00D0D912 /* Info.plist */,
@@ -211,14 +211,14 @@
 			path = BaseAppTests;
 			sourceTree = "<group>";
 		};
-		EED9F0E321CDEBB600D0D912 /* Model Class */ = {
+		EED9F0E321CDEBB600D0D912 /* Model Classes */ = {
 			isa = PBXGroup;
 			children = (
 				EED9F0F421CDF0E300D0D912 /* Icon.swift */,
 				EED9F0EF21CDF0E200D0D912 /* CharacterModel.swift */,
 				EED9F0F321CDF0E200D0D912 /* RelatedTopics.swift */,
 			);
-			path = "Model Class";
+			path = "Model Classes";
 			sourceTree = "<group>";
 		};
 		EED9F10321CE036B00D0D912 /* AppTypeFactory */ = {
