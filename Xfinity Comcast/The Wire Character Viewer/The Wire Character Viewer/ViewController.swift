@@ -14,11 +14,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var appName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        appName.text = Constant.currentAppType.rawValue
+        appName.text = Constant.AppType.TheWireCharacterViewer.rawValue
     }
     
     @IBAction func startAppAction(_ sender: Any) {
-        if let viewController = ApplicationManager.initialViewController(appType:.TheWireCharacterViewer) {
+        if let viewController = ApplicationManager.initialViewController(appType: .TheWireCharacterViewer) {
             present(viewController, animated: true, completion: nil)
         }
     }

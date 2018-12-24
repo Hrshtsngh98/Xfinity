@@ -17,7 +17,12 @@ class CharacterCollectionViewItemCell: UICollectionViewCell {
         }
     }
     @IBOutlet weak var characterTextLable: UILabel!
-    @IBOutlet weak var characterTitleLabel: UILabel!
+    @IBOutlet weak var characterTitleLabel: UILabel! {
+        didSet {
+            characterTitleLabel.numberOfLines = 0
+            characterTitleLabel
+        }
+    }
     
     func setUp(with data: RelatedTopics) {
         if let urlString = data.icon?.url, let url = URL(string: urlString) {
