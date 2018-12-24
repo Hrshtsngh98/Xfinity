@@ -13,8 +13,6 @@ class CharacterCollectionViewRowCell: UICollectionViewCell {
     @IBOutlet weak var characterTitleLabel: UILabel!
     
     func setUp(with data: RelatedTopics) {
-        layer.borderWidth = 2
-        layer.borderColor = UIColor.black.cgColor
         if let array = data.text?.splitByHypen() {
             if array.count > 0 {
                 let attributedText = NSAttributedString(string: array[0], attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])

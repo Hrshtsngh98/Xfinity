@@ -14,7 +14,7 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterDetailText: UILabel! {
         didSet {
-            characterDetailText.text = Constant.Strings.characterDetailString
+            characterDetailText.text = Constant.DefaultStrings.characterDetailString
         }
     }
     
@@ -22,7 +22,7 @@ class CharacterDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = Constant.Strings.characterDetailTitleString
+        title = Constant.DefaultStrings.characterDetailTitleString
         setUpData()
     }
     
@@ -32,7 +32,7 @@ class CharacterDetailViewController: UIViewController {
         }
         characterDetailText.text = text
         if let urlString = topic.icon?.url, let url = URL(string: urlString) {
-            characterImageView.sd_setImage(with: url, placeholderImage: UIImage(named: Constant.Strings.defaultImageName, in: BaseAppBundleHelper.bundle, compatibleWith: nil))
+            characterImageView.sd_setImage(with: url, placeholderImage: UIImage(named: Constant.DefaultStrings.defaultImageName, in: BaseAppBundleHelper.bundle, compatibleWith: nil))
         }
         
         let array = text.splitByHypen()

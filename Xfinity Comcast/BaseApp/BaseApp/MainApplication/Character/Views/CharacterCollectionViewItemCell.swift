@@ -24,7 +24,7 @@ class CharacterCollectionViewItemCell: UICollectionViewCell {
     
     func setUp(with data: RelatedTopics) {
         if let urlString = data.icon?.url, let url = URL(string: urlString) {
-            characterImageView.sd_setImage(with: url, placeholderImage: UIImage(named: Constant.Strings.defaultImageName, in: BaseAppBundleHelper.bundle, compatibleWith: nil))
+            characterImageView.sd_setImage(with: url, placeholderImage: UIImage(named: Constant.DefaultStrings.defaultImageName, in: BaseAppBundleHelper.bundle, compatibleWith: nil))
         }
         
         if let array = data.text?.splitByHypen() {
