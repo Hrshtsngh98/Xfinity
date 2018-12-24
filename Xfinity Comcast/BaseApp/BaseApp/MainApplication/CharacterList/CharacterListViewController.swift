@@ -30,6 +30,7 @@ class CharacterListViewController: UIViewController {
         }
     }
     
+    // MARK:- Properties
     let itemInset: CGFloat = 8
     let zero: CGFloat = 8
     let itemHeightWhenList: CGFloat = 40
@@ -39,6 +40,7 @@ class CharacterListViewController: UIViewController {
     var enabled = true
     var characterListViewModel: CharacterListViewModel = CharacterListViewModel()
     
+    // MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNib()

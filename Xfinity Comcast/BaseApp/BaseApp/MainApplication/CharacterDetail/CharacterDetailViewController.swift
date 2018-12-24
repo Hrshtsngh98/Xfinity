@@ -11,6 +11,7 @@ import SDWebImage
 
 class CharacterDetailViewController: UIViewController {
     
+    // MARK:- IBOutlets
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterDetailText: UILabel! {
         didSet {
@@ -18,13 +19,19 @@ class CharacterDetailViewController: UIViewController {
         }
     }
     
+    // MARK:- Properties
+    
     var characterDetailViewModel: CharacterDetailViewModel?
 
+    // MARK:- Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Constant.DefaultStrings.characterDetailTitleString
         setUpData()
     }
+    
+    // MARK:- Private methods
     
     func setUpData() {
         guard let relatedTopic = characterDetailViewModel?.relatedTopic, let text = relatedTopic.text else {
