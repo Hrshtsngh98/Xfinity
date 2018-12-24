@@ -65,10 +65,8 @@ class CharacterListViewController: UIViewController {
             } else {
                 DispatchQueue.main.async {
                     self.characterListTable.reloadData()
+                    self.activityIndicator.stopAnimating()
                 }
-            }
-            DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
             }
         }
     }
