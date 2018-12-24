@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        if let viewController = ApplicationManager.initialViewController(appType: .SimpsonsCharacterViewer) {
+        if let viewController = ApplicationManager.initialViewController(for: .SimpsonsCharacterViewer) {
             window?.rootViewController = viewController
         }
         return true

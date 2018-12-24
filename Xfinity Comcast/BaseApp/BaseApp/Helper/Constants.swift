@@ -8,7 +8,8 @@
 
 import Foundation
 
-public typealias completionHandler = (Data?, Error?) -> ()
+public typealias completionHandler = () -> ()
+public typealias serviceCompletionHandler = (Data?, Error?) -> ()
 public typealias completionForCharacterModel = (CharacterModel?, Error?) -> ()
 
 public struct Constant {

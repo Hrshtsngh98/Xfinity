@@ -11,10 +11,10 @@ import UIKit
 
 public class ApplicationManager {
     
-    public static func initialViewController(appType: Constant.AppType) -> UIViewController? {
+    public static func initialViewController(for appType: Constant.AppType) -> UIViewController? {
         let storyboard = UIStoryboard.init(name: Constant.StoryboardName.character, bundle: BaseAppBundleHelper.bundle)
+        Constant.currentAppType = appType
         if let controller = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardID.baseSplitViewController) as? UISplitViewController {
-            Constant.currentAppType = appType
             return controller
         }
         return nil

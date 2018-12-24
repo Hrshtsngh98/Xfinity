@@ -28,14 +28,12 @@ class CharacterListViewController: UIViewController {
         }
     }
     
-    let inset: CGFloat = 8
+    let itemInset: CGFloat = 8
+    let zero: CGFloat = 8
     let itemHeightWhenList: CGFloat = 40
     let minimumLineSpacing: CGFloat = 10
     let minimumInteritemSpacing: CGFloat = 10
     var cellsPerRow = 1
-    
-    var relatedTopics: [RelatedTopics] = []
-    var backUpList: [RelatedTopics] = []
     var enabled = true
     var characterListViewModel: CharacterListViewModel = CharacterListViewModel()
     
@@ -50,7 +48,7 @@ class CharacterListViewController: UIViewController {
     
     func setUpCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
+        layout.sectionInset = UIEdgeInsets(top: zero, left: itemInset, bottom: zero, right: itemInset)
         characterListTable.collectionViewLayout = layout
     }
     
@@ -60,15 +58,11 @@ class CharacterListViewController: UIViewController {
     }
     
     func setUpData() {
-        characterListViewModel = CharacterListViewModel()
-        
         title = characterListViewModel.titleString
-        characterListViewModel.characterFactory.getData { (model, error) in
+        characterListViewModel.getData { (_, error) in
             if let error = error {
                 self.showErrorAlert(title: Constant.DefaultStrings.error, message: error.localizedDescription, alertActions: nil)
             } else {
-                self.relatedTopics = model!.relatedTopics!
-                self.backUpList = self.relatedTopics
                 DispatchQueue.main.async {
                     self.characterListTable.reloadData()
                 }
@@ -97,7 +91,7 @@ class CharacterListViewController: UIViewController {
 
 extension CharacterListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return relatedTopics.count
+        return characterListViewModel.relatedTopics.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -106,13 +100,13 @@ extension CharacterListViewController: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.characterCollectionViewRowCell, for: indexPath) as? CharacterCollectionViewRowCell else {
                 return UICollectionViewCell()
             }
-            cell.setUp(with: relatedTopics[indexPath.row])
+            cell.setUp(with: characterListViewModel.relatedTopics[indexPath.row])
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.characterCollectionViewItemCell, for: indexPath) as? CharacterCollectionViewItemCell else {
                 return UICollectionViewCell()
             }
-            cell.setUp(with: relatedTopics[indexPath.row])
+            cell.setUp(with: characterListViewModel.relatedTopics[indexPath.row])
             return cell
         }
     }
@@ -124,7 +118,7 @@ extension CharacterListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard.init(name: Constant.StoryboardName.characterDetail, bundle: BaseAppBundleHelper.bundle)
         if let controller = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardID.characterDetailViewController) as? CharacterDetailViewController {
-            controller.relatedTopic = relatedTopics[indexPath.row]
+            controller.relatedTopic = characterListViewModel.relatedTopics[indexPath.row]
             splitViewController?.showDetailViewController(controller, sender: nil)
         }
     }
@@ -134,7 +128,7 @@ extension CharacterListViewController: UICollectionViewDelegate {
 extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let marginsAndInsets = CGFloat(inset * 2) + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
+        let marginsAndInsets = CGFloat(itemInset * 2) + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
         let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
         if enabled {
             return CGSize(width: itemWidth, height: itemHeightWhenList)
@@ -154,14 +148,9 @@ extension CharacterListViewController: UISplitViewControllerDelegate {
 extension CharacterListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        relatedTopics = backUpList
-        if searchText.count == 0 {
-            characterListTable.reloadData()
-            return
+        characterListViewModel.filterCharacterList(searchText: searchText) {
+            self.characterListTable.reloadData()
         }
-        
-        relatedTopics = characterListViewModel.filterCharacterList(searchText: searchText, relatedTopics: relatedTopics)
-        characterListTable.reloadData()
     }
     
 }
