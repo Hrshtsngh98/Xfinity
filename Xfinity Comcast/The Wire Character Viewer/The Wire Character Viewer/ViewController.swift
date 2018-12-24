@@ -10,22 +10,18 @@ import UIKit
 import BaseApp
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var openWireCharacterApp: UIButton!
     
+    @IBOutlet weak var appName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        openWireCharacterApp.addTarget(self, action: #selector(openApp), for: .touchUpInside)
-        
+        appName.text = Constant.currentAppType.rawValue
     }
     
-    @objc func openApp() {
-        if let viewController = ApplicationManager.initialViewController(appType: .SimpsonsCharacterViewer) {
+    @IBAction func startAppAction(_ sender: Any) {
+        if let viewController = ApplicationManager.initialViewController(appType:.TheWireCharacterViewer) {
             present(viewController, animated: true, completion: nil)
         }
     }
-
-
 }
 
 
