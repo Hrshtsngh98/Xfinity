@@ -10,6 +10,10 @@ import UIKit
 
 class CharacterListViewController: UIViewController {
     
+    private struct K {
+        static let characterCollectionViewRowCell = "CharacterCollectionViewRowCell"
+        static let characterCollectionViewItemCell = "CharacterCollectionViewItemCell"
+    }
     @IBOutlet weak var characterListTable: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
@@ -28,9 +32,6 @@ class CharacterListViewController: UIViewController {
     var enabled = true
     var characterListViewModel: CharacterListViewModel = CharacterListViewModel()
     
-    private let characterCollectionViewRowCell = "CharacterCollectionViewRowCell"
-    private let characterCollectionViewItemCell = "CharacterCollectionViewItemCell"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNib()
@@ -47,8 +48,8 @@ class CharacterListViewController: UIViewController {
     }
     
     func registerNib() {
-        characterListTable.register(UINib(nibName: characterCollectionViewRowCell, bundle: BaseAppBundleHelper.bundle), forCellWithReuseIdentifier: characterCollectionViewRowCell)
-        characterListTable.register(UINib(nibName: characterCollectionViewItemCell, bundle: BaseAppBundleHelper.bundle), forCellWithReuseIdentifier: characterCollectionViewItemCell)
+        characterListTable.register(UINib(nibName: K.characterCollectionViewRowCell, bundle: BaseAppBundleHelper.bundle), forCellWithReuseIdentifier: K.characterCollectionViewRowCell)
+        characterListTable.register(UINib(nibName: K.characterCollectionViewItemCell, bundle: BaseAppBundleHelper.bundle), forCellWithReuseIdentifier: K.characterCollectionViewItemCell)
     }
     
     func setUpData() {
@@ -57,7 +58,7 @@ class CharacterListViewController: UIViewController {
         title = characterListViewModel.titleString
         characterListViewModel.characterFactory.getData { (model, error) in
             if let error = error {
-                self.showErrorAlert(error: error, alertActions: nil)
+                self.showErrorAlert(title: Constant.DefaultStrings.error, message: error.localizedDescription, alertActions: nil)
             } else {
                 self.relatedTopics = model!.relatedTopics!
                 self.backUpList = self.relatedTopics
@@ -92,13 +93,13 @@ extension CharacterListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if enabled {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: characterCollectionViewRowCell, for: indexPath) as? CharacterCollectionViewRowCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.characterCollectionViewRowCell, for: indexPath) as? CharacterCollectionViewRowCell else {
                 return UICollectionViewCell()
             }
             cell.setUp(with: relatedTopics[indexPath.row])
             return cell
         } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: characterCollectionViewItemCell, for: indexPath) as? CharacterCollectionViewItemCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.characterCollectionViewItemCell, for: indexPath) as? CharacterCollectionViewItemCell else {
                 return UICollectionViewCell()
             }
             cell.setUp(with: relatedTopics[indexPath.row])
@@ -111,8 +112,8 @@ extension CharacterListViewController: UICollectionViewDataSource {
 extension CharacterListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard.init(name: "CharacterDetail", bundle: BaseAppBundleHelper.bundle)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "CharacterDetailViewController") as? CharacterDetailViewController {
+        let storyboard = UIStoryboard.init(name: Constant.StoryboardName.characterDetail, bundle: BaseAppBundleHelper.bundle)
+        if let controller = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardID.characterDetailViewController) as? CharacterDetailViewController {
             controller.relatedTopic = relatedTopics[indexPath.row]
             splitViewController?.showDetailViewController(controller, sender: nil)
         }

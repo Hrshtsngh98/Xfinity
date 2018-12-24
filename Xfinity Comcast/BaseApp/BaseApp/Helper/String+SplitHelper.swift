@@ -11,7 +11,7 @@ import Foundation
 extension String {
     
     public func splitByHypen() -> [String] {
-        return self.components(separatedBy: " - ")
+        return self.components(separatedBy: Constant.Separator.hypenSpace)
     }
     
 }

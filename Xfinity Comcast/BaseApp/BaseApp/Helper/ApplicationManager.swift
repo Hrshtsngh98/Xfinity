@@ -12,8 +12,8 @@ import UIKit
 public class ApplicationManager {
     
     public static func initialViewController(appType: Constant.AppType) -> UIViewController? {
-        let storyboard = UIStoryboard.init(name: "Character", bundle: BaseAppBundleHelper.bundle)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "UISplitViewController") as? UISplitViewController {
+        let storyboard = UIStoryboard.init(name: Constant.StoryboardName.character, bundle: BaseAppBundleHelper.bundle)
+        if let controller = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardID.baseSplitViewController) as? UISplitViewController {
             Constant.currentAppType = appType
             return controller
         }
