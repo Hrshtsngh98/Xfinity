@@ -17,39 +17,13 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j52-nL-PIs">
-                                <rect key="frame" x="166" y="278" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdB-DE-2Dw">
-                                <rect key="frame" x="196" y="412" width="34" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="startButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IWD-rd-Rw8"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.79607843140000001" green="0.92156862750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="WdB-DE-2Dw" firstAttribute="top" secondItem="j52-nL-PIs" secondAttribute="bottom" constant="134" id="JUp-S0-XEC"/>
-                            <constraint firstItem="j52-nL-PIs" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="MYu-92-bzN"/>
-                            <constraint firstItem="j52-nL-PIs" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="THf-Gy-yhL"/>
-                            <constraint firstItem="j52-nL-PIs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cLA-lv-w1Z"/>
-                            <constraint firstItem="WdB-DE-2Dw" firstAttribute="centerX" secondItem="j52-nL-PIs" secondAttribute="centerX" id="jJn-q0-8gX"/>
-                            <constraint firstItem="WdB-DE-2Dw" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="0.29999999999999999" id="wEz-3W-7n7"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="appName" destination="j52-nL-PIs" id="7wk-jr-FxH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="12" y="11"/>
         </scene>
     </scenes>
 </document>

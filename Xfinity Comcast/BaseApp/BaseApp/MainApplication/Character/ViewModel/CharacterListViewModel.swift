@@ -22,7 +22,6 @@ class CharacterListViewModel {
             characterFactory = SimpsonFactory()
         case .TheWireCharacterViewer:
             characterFactory = WireCharacterFactory()
-
         }
     }
     
