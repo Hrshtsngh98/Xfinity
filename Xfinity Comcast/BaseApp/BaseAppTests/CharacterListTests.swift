@@ -42,10 +42,7 @@ class CharacterListTests: XCTestCase {
     }
     
     func testCharacterFactory() {
-        guard viewModel?.characterFactory != nil else {
-            XCTFail()
-            return
-        }
+        XCTAssertNotNil(viewModel?.characterFactory)
     }
     
     func testTitleString() {
