@@ -13,6 +13,14 @@ struct RelatedTopics : Codable {
 	let result : String?
 	let icon : Icon?
 	let text : String?
+    
+    //For using during unit testing
+    init(firstUrl: String, result: String, text: String, icon: Icon) {
+        self.firstURL = firstUrl
+        self.result = result
+        self.icon = icon
+        self.text = text
+    }
 
 	enum CodingKeys: String, CodingKey {
 
