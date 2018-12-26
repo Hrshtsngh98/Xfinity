@@ -12,6 +12,13 @@ struct Icon : Codable {
 	let height : String?
 	let width : String?
 	let url : String?
+    
+    //For using during unit testing
+    init(url: String, height: String?, width: String?) {
+        self.url = url
+        self.height = height
+        self.width = width
+    }
 
 	enum CodingKeys: String, CodingKey {
 		case height = "Height"

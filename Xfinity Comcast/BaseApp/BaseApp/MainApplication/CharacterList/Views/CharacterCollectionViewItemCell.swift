@@ -27,7 +27,7 @@ class CharacterCollectionViewItemCell: UICollectionViewCell {
             characterImageView.sd_setImage(with: url, placeholderImage: UIImage(named: Constant.DefaultStrings.defaultImageName, in: BaseAppBundleHelper.bundle, compatibleWith: nil))
         }
         
-        if let array = data.text?.splitByHypen(), let titleString = array.first {
+        if let array = data.text?.splitByHyphen(), let titleString = array.first {
             let attributedText = NSAttributedString(string: titleString, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])
             characterTitleLabel.attributedText = attributedText
         }

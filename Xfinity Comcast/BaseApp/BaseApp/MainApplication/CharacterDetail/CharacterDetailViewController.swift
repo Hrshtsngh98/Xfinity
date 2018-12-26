@@ -11,6 +11,7 @@ import SDWebImage
 
 class CharacterDetailViewController: UIViewController {
     
+    // MARK:- IBOutlets
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterDetailText: UILabel! {
         didSet {
@@ -18,26 +19,32 @@ class CharacterDetailViewController: UIViewController {
         }
     }
     
-    var relatedTopic: RelatedTopics?
+    // MARK:- Properties
+    
+    var characterDetailViewModel: CharacterDetailViewModel?
 
+    // MARK:- Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Constant.DefaultStrings.characterDetailTitleString
         setUpData()
     }
     
+    // MARK:- Private methods
+    
     func setUpData() {
-        guard let topic = relatedTopic, let text = topic.text else {
+        guard let relatedTopic = characterDetailViewModel?.relatedTopic, let text = relatedTopic.text else {
             return
         }
         characterDetailText.text = text
-        if let urlString = topic.icon?.url, let url = URL(string: urlString) {
+        if let urlString = relatedTopic.icon?.url, let url = URL(string: urlString) {
             characterImageView.sd_setImage(with: url, placeholderImage: UIImage(named: Constant.DefaultStrings.defaultImageName, in: BaseAppBundleHelper.bundle, compatibleWith: nil))
         }
         
-        let array = text.splitByHypen()
-        if array.count > 0 {
-            self.title = array[0]
+        let array = text.splitByHyphen()
+        if let title = array.first {
+            self.title = title
         }
         
         if array.count > 1 {

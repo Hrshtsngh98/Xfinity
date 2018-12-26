@@ -14,6 +14,8 @@ class CharacterListViewController: UIViewController {
         static let characterCollectionViewRowCell = "CharacterCollectionViewRowCell"
         static let characterCollectionViewItemCell = "CharacterCollectionViewItemCell"
     }
+    
+    // MARK:- IBOutlets
     @IBOutlet weak var characterListTable: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
         didSet {
@@ -28,6 +30,7 @@ class CharacterListViewController: UIViewController {
         }
     }
     
+    // MARK:- Properties
     let itemInset: CGFloat = 8
     let zero: CGFloat = 8
     let itemHeightWhenList: CGFloat = 40
@@ -37,6 +40,7 @@ class CharacterListViewController: UIViewController {
     var enabled = true
     var characterListViewModel: CharacterListViewModel = CharacterListViewModel()
     
+    // MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNib()
@@ -46,18 +50,20 @@ class CharacterListViewController: UIViewController {
         splitViewController?.preferredDisplayMode = .allVisible
     }
     
-    func setUpCollectionView() {
+    // MARK:- Private methods
+    
+    private func setUpCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: zero, left: itemInset, bottom: zero, right: itemInset)
         characterListTable.collectionViewLayout = layout
     }
     
-    func registerNib() {
+    private func registerNib() {
         characterListTable.register(UINib(nibName: K.characterCollectionViewRowCell, bundle: BaseAppBundleHelper.bundle), forCellWithReuseIdentifier: K.characterCollectionViewRowCell)
         characterListTable.register(UINib(nibName: K.characterCollectionViewItemCell, bundle: BaseAppBundleHelper.bundle), forCellWithReuseIdentifier: K.characterCollectionViewItemCell)
     }
     
-    func setUpData() {
+    private func setUpData() {
         title = characterListViewModel.titleString
         characterListViewModel.getData { (_, error) in
             if let error = error {
@@ -65,17 +71,13 @@ class CharacterListViewController: UIViewController {
             } else {
                 DispatchQueue.main.async {
                     self.characterListTable.reloadData()
+                    self.activityIndicator.stopAnimating()
                 }
-            }
-            DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
             }
         }
     }
     
-    @IBAction func closeAction(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+    // MARK:- IBAction
     
     @IBAction func toggleLayoutAction() {
         enabled = !enabled
@@ -89,6 +91,7 @@ class CharacterListViewController: UIViewController {
     
 }
 
+// MARK:- UICollectionViewDataSource
 extension CharacterListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characterListViewModel.relatedTopics.count
@@ -113,20 +116,22 @@ extension CharacterListViewController: UICollectionViewDataSource {
     
 }
 
+// MARK:- UICollectionViewDelegate
 extension CharacterListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard.init(name: Constant.StoryboardName.characterDetail, bundle: BaseAppBundleHelper.bundle)
         if let controller = storyboard.instantiateViewController(withIdentifier: Constant.StoryboardID.characterDetailViewController) as? CharacterDetailViewController {
-            controller.relatedTopic = characterListViewModel.relatedTopics[indexPath.row]
+            controller.characterDetailViewModel = CharacterDetailViewModel(topic: characterListViewModel.relatedTopics[indexPath.row])
             splitViewController?.showDetailViewController(controller, sender: nil)
         }
     }
     
 }
 
+// MARK:- UICollectionViewDelegateFlowLayout
 extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let marginsAndInsets = CGFloat(itemInset * 2) + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
         let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
@@ -136,15 +141,17 @@ extension CharacterListViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: itemWidth, height: itemWidth)
         }
     }
-
+    
 }
 
+// MARK:- UISplitViewControllerDelegate
 extension CharacterListViewController: UISplitViewControllerDelegate {
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
     }
 }
 
+// MARK:- UISearchBarDelegate
 extension CharacterListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
