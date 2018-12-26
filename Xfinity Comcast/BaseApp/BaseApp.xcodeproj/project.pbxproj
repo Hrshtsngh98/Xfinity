@@ -11,6 +11,7 @@
 		EE3A925F21D01B4300779737 /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A925E21D01B4300779737 /* CharacterListViewModel.swift */; };
 		EE47B92E21D2A5FA005F1AAF /* CharacterListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE47B92D21D2A5FA005F1AAF /* CharacterListTests.swift */; };
 		EE47B93021D2EEBE005F1AAF /* CharacterDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE47B92F21D2EEBE005F1AAF /* CharacterDetailsTests.swift */; };
+		EE47B93221D30609005F1AAF /* StringsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE47B93121D30609005F1AAF /* StringsTests.swift */; };
 		EE91868121CEA63C00929C38 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91868021CEA63C00929C38 /* UIViewController+Alert.swift */; };
 		EE91868F21CEC6AF00929C38 /* CharacterCollectionViewRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE91868E21CEC6AF00929C38 /* CharacterCollectionViewRowCell.xib */; };
 		EE91869121CEC6C800929C38 /* CharacterCollectionViewRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91869021CEC6C800929C38 /* CharacterCollectionViewRowCell.swift */; };
@@ -52,6 +53,7 @@
 		EE3A925E21D01B4300779737 /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
 		EE47B92D21D2A5FA005F1AAF /* CharacterListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListTests.swift; sourceTree = "<group>"; };
 		EE47B92F21D2EEBE005F1AAF /* CharacterDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsTests.swift; sourceTree = "<group>"; };
+		EE47B93121D30609005F1AAF /* StringsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsTests.swift; sourceTree = "<group>"; };
 		EE91868021CEA63C00929C38 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		EE91868E21CEC6AF00929C38 /* CharacterCollectionViewRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCollectionViewRowCell.xib; sourceTree = "<group>"; };
 		EE91869021CEC6C800929C38 /* CharacterCollectionViewRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewRowCell.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				EED9F0D521CDE91F00D0D912 /* Info.plist */,
+				EE47B93121D30609005F1AAF /* StringsTests.swift */,
 				EE47B92D21D2A5FA005F1AAF /* CharacterListTests.swift */,
 				EE47B92F21D2EEBE005F1AAF /* CharacterDetailsTests.swift */,
 			);
@@ -398,6 +401,7 @@
 			files = (
 				EE47B93021D2EEBE005F1AAF /* CharacterDetailsTests.swift in Sources */,
 				EE47B92E21D2A5FA005F1AAF /* CharacterListTests.swift in Sources */,
+				EE47B93221D30609005F1AAF /* StringsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
