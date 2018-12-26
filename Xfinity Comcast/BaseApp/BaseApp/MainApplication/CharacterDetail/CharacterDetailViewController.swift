@@ -42,7 +42,7 @@ class CharacterDetailViewController: UIViewController {
             characterImageView.sd_setImage(with: url, placeholderImage: UIImage(named: Constant.DefaultStrings.defaultImageName, in: BaseAppBundleHelper.bundle, compatibleWith: nil))
         }
         
-        let array = text.splitByHypen()
+        let array = text.splitByHyphen()
         if let title = array.first {
             self.title = title
         }

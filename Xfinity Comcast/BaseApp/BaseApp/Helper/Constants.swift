@@ -46,6 +46,6 @@ public struct Constant {
     }
     
     public enum Separator {
-        static let hypenSpace = " - "
+        static let hyphenSpace = " - "
     }
 }

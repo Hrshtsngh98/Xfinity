@@ -10,8 +10,8 @@ import Foundation
 
 extension String {
     
-    public func splitByHypen() -> [String] {
-        return self.components(separatedBy: Constant.Separator.hypenSpace)
+    public func splitByHyphen() -> [String] {
+        return self.components(separatedBy: Constant.Separator.hyphenSpace)
     }
     
 }
