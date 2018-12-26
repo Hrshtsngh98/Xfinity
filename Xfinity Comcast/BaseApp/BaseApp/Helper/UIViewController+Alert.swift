@@ -10,6 +10,7 @@ import Foundation
 
 extension UIViewController {
     
+    //Generic method to show alert box
     public func showErrorAlert(title: String, message: String?, alertActions: [UIAlertAction]?) {
         let alterController = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
         alterController.addAction(UIAlertAction.init(title: Constant.DefaultStrings.ok, style: .default, handler: nil))

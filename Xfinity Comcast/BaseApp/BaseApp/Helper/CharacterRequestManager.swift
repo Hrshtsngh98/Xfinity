@@ -10,6 +10,7 @@ import Foundation
 
 class CharacterRequestManager {
     
+    //Method that makes the service call using URLSession
     class func requestCharacter(urlString: String, completion: @escaping serviceCompletionHandler) {
         guard let url = URL(string: urlString) else {
             return

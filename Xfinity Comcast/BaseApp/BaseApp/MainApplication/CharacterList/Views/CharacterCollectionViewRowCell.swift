@@ -10,8 +10,11 @@ import UIKit
 
 class CharacterCollectionViewRowCell: UICollectionViewCell {
     
+     //MARK:- IBoutlets
+    
     @IBOutlet weak var characterTitleLabel: UILabel!
     
+    //method to setup data inside the cell
     func setUp(with data: RelatedTopics) {
         if let array = data.text?.splitByHyphen(), let titleString = array.first {
             let attributedText = NSAttributedString(string: titleString, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)])

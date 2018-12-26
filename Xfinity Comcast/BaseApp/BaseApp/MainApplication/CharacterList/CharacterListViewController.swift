@@ -52,6 +52,7 @@ class CharacterListViewController: UIViewController {
     
     // MARK:- Private methods
     
+    //Method to setup dimensions of item in collectionv view
     private func setUpCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: zero, left: itemInset, bottom: zero, right: itemInset)
@@ -63,6 +64,7 @@ class CharacterListViewController: UIViewController {
         characterListTable.register(UINib(nibName: K.characterCollectionViewItemCell, bundle: BaseAppBundleHelper.bundle), forCellWithReuseIdentifier: K.characterCollectionViewItemCell)
     }
     
+    //method to make service call from view model and setup data for collection view on view controller
     private func setUpData() {
         title = characterListViewModel.titleString
         characterListViewModel.getData { (_, error) in

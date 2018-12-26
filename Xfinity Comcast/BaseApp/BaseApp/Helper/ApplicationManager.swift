@@ -11,6 +11,8 @@ import UIKit
 
 public class ApplicationManager {
     
+    //Method to instantiate the initial method depending on which application is using the framework.
+    //Return the appropriate view controller and sets the current app type.
     public static func initialViewController(for appType: Constant.AppType) -> UIViewController? {
         let storyboard = UIStoryboard.init(name: Constant.StoryboardName.character, bundle: BaseAppBundleHelper.bundle)
         Constant.currentAppType = appType

@@ -33,6 +33,7 @@ class CharacterDetailViewController: UIViewController {
     
     // MARK:- Private methods
     
+    //Method to setup data in controller
     func setUpData() {
         guard let relatedTopic = characterDetailViewModel?.relatedTopic, let text = relatedTopic.text else {
             return

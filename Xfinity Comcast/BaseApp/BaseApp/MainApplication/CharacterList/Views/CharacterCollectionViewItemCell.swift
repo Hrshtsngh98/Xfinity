@@ -11,6 +11,8 @@ import SDWebImage
 
 class CharacterCollectionViewItemCell: UICollectionViewCell {
     
+    //MARK:- IBoutlets
+    
     @IBOutlet weak var characterImageView: UIImageView! {
         didSet {
             characterImageView.contentMode = .scaleAspectFit
@@ -22,6 +24,7 @@ class CharacterCollectionViewItemCell: UICollectionViewCell {
         }
     }
     
+    //method to setup data inside the cell
     func setUp(with data: RelatedTopics) {
         if let urlString = data.icon?.url, let url = URL(string: urlString) {
             characterImageView.sd_setImage(with: url, placeholderImage: UIImage(named: Constant.DefaultStrings.defaultImageName, in: BaseAppBundleHelper.bundle, compatibleWith: nil))

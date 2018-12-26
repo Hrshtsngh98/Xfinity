@@ -26,6 +26,7 @@ public class CharacterFactory {
         self.appType = appType
     }
     
+    //Method to make service call from request manager
     public func getData(completion: @escaping completionForCharacterModel) {
         
         CharacterRequestManager.requestCharacter(urlString: url) { (data, error) in

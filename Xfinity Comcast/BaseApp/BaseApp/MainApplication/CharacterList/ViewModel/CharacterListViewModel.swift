@@ -26,6 +26,7 @@ class CharacterListViewModel {
         }
     }
     
+    //Method to get the data from app-type respective factory which in turn makes the service call from request manager.
     func getData(completion: @escaping completionForCharacterModel) {
         characterFactory.getData { (model, error) in
             if error == nil {
@@ -36,7 +37,7 @@ class CharacterListViewModel {
         }
     }
     
-    
+    //Method to filter the character list based on the search string user inputs
     func filterCharacterList(searchText: String, completion: @escaping completionHandler) {
         relatedTopics = backUpList
         if searchText.count != 0 {

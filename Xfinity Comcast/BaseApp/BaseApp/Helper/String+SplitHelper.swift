@@ -10,6 +10,7 @@ import Foundation
 
 extension String {
     
+    //generic method to split string.
     public func splitByHyphen() -> [String] {
         return self.components(separatedBy: Constant.Separator.hyphenSpace)
     }
