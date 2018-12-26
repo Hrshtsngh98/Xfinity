@@ -9,6 +9,8 @@
 import Foundation
 
 final class BaseAppBundleHelper {
+    
+    // Property to return the current app bundle.
     static var bundle: Bundle {
         return Bundle(for: self)
     }
