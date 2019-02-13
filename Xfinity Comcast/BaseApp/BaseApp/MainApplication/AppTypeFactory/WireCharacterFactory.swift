@@ -10,8 +10,7 @@ import Foundation
 
 public class WireCharacterFactory: CharacterFactory {
     
-    public init() {
-        super.init(appType: Constant.AppType.TheWireCharacterViewer)
-    }
-
+    var appType: Constant.AppType = .TheWireCharacterViewer
+    var url: String = Constant.ServiceUrls.theWireCharacterViewer
+    
 }

@@ -8,23 +8,13 @@
 
 import Foundation
 
-public class CharacterFactory {
-    
-    private var appType: Constant.AppType
-    private var url: String {
-        get {
-            switch appType {
-                case .SimpsonsCharacterViewer:
-                    return Constant.ServiceUrls.simpsonsCharacterViewer
-                case .TheWireCharacterViewer:
-                    return Constant.ServiceUrls.theWireCharacterViewer
-            }
-        }
-    }
-    
-    public init(appType: Constant.AppType) {
-        self.appType = appType
-    }
+protocol CharacterFactory {
+    var appType: Constant.AppType { get }
+    var url: String {get}
+    func getData(completion: @escaping completionForCharacterModel)
+}
+
+extension CharacterFactory {
     
     //Method to make service call from request manager
     public func getData(completion: @escaping completionForCharacterModel) {

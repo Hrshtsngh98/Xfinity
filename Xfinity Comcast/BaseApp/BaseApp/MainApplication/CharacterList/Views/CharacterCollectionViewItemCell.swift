@@ -36,4 +36,10 @@ class CharacterCollectionViewItemCell: UICollectionViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        characterImageView.image = UIImage(named: Constant.DefaultStrings.defaultImageName, in: BaseAppBundleHelper.bundle, compatibleWith: nil)
+        characterTitleLabel.text = nil
+    }
+    
 }

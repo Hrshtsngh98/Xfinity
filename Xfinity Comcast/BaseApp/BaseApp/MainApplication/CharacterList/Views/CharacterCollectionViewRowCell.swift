@@ -23,4 +23,8 @@ class CharacterCollectionViewRowCell: UICollectionViewCell {
         
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        characterTitleLabel.text = nil
+    }
 }

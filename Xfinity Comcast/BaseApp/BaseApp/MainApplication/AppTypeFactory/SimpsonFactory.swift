@@ -10,9 +10,8 @@ import Foundation
 
 public class SimpsonFactory: CharacterFactory {
     
-    public init() {
-        super.init(appType: Constant.AppType.SimpsonsCharacterViewer)
-    }
+    var url: String = Constant.ServiceUrls.simpsonsCharacterViewer
+    var appType: Constant.AppType = .SimpsonsCharacterViewer
     
 }
 
